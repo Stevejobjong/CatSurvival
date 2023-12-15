@@ -4695,7 +4695,7 @@ MonoBehaviour:
   maxCheckDistance: 3
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   promptText: {fileID: 2043207101}
 --- !u!114 &1351297587
 MonoBehaviour:
