@@ -71,9 +71,14 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         if (health.curValue == 0.0f)
             Die();
 
-        health.uiBar.fillAmount = health.GetPercentage();
-        hunger.uiBar.fillAmount = hunger.GetPercentage();
-        thirsty.uiBar.fillAmount = thirsty.GetPercentage();
+        //health.uiBar = UIManager.Instance.health;
+        //hunger.uiBar = UIManager.Instance.hunger;
+        //thirsty.uiBar = UIManager.Instance.thirsty;
+        //stamina.uiBar = UIManager.Instance.stamina;
+
+        health.uiBar.fillAmount = health.GetPercentage();        
+        hunger.uiBar.fillAmount = hunger.GetPercentage();        
+        thirsty.uiBar.fillAmount = thirsty.GetPercentage();        
         stamina.uiBar.fillAmount = stamina.GetPercentage();
     }
 
