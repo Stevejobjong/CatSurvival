@@ -26,12 +26,14 @@ public class PlayerController : MonoBehaviour
     public bool canLook = true;
 
     private Rigidbody _rigidbody;
+    public PlayerConditions condition;
 
     public static PlayerController instance;
     private void Awake()
     {
         instance = this;
         _rigidbody = GetComponent<Rigidbody>();
+        condition = GetComponent<PlayerConditions>();
     }
 
     void Start()
