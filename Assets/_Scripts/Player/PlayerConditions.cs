@@ -76,10 +76,10 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         //thirsty.uiBar = UIManager.Instance.thirsty;
         //stamina.uiBar = UIManager.Instance.stamina;
 
-        health.uiBar.fillAmount = health.GetPercentage();        
-        hunger.uiBar.fillAmount = hunger.GetPercentage();        
-        thirsty.uiBar.fillAmount = thirsty.GetPercentage();        
-        stamina.uiBar.fillAmount = stamina.GetPercentage();
+        //health.uiBar.fillAmount = health.GetPercentage();        
+        //hunger.uiBar.fillAmount = hunger.GetPercentage();        
+        //thirsty.uiBar.fillAmount = thirsty.GetPercentage();        
+        //stamina.uiBar.fillAmount = stamina.GetPercentage();
     }
 
     public void Heal(float amount)
