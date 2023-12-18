@@ -7,9 +7,11 @@ public class EquipTool : Equip
     public float attackRate;
     private bool attacking;
     public float attackDistance;
+    public float fishingDistance;
 
     [Header("Resource Gathering")]
     public bool doesGatherResources;
+    public bool doesGatherFish;
 
     [Header("Combat")]
     public bool doesDealDamage;
@@ -50,16 +52,31 @@ public class EquipTool : Equip
 
         if (Physics.Raycast(ray, out hit, attackDistance))
         {
-            if (doesGatherResources && hit.collider.TryGetComponent(out Resource resouce))
+            if (doesGatherResources && hit.collider.TryGetComponent(out Resource resource))
             {
-                resouce.Gather(hit.point, hit.normal);
+                resource.Gather(hit.point, hit.normal);
             }
+
 
             if (doesDealDamage && hit.collider.TryGetComponent(out IDamagable damageable))
             {
                 damageable.TakePhysicalDamage(damage);
             }
         }
-
     }
+    public void OnFishing()
+    {
+        Ray ray = camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, fishingDistance))
+        {
+            if (doesGatherFish && hit.collider.TryGetComponent(out Resource resource))
+            {
+                print("´ê¾Ò´Ù");
+                resource.Fishing(hit.point);
+            }
+
+        }
+    }
+
 }

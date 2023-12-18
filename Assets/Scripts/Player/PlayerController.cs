@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 curMovementInput;
     public float jumpForce;
     public LayerMask groundLayerMask;
-    Animator animator;
+    [SerializeField] Animator animator;
 
     [Header("Look")]
     public Transform cameraContainer;
@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        animator = GetComponentInChildren<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -60,9 +59,9 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
+        animator.SetFloat("Speed", dir.normalized.magnitude);
         dir *= moveSpeed;
         dir.y = _rigidbody.velocity.y;
-        animator.SetFloat("Speed", dir.normalized.magnitude);
 
         _rigidbody.velocity = dir;
     }

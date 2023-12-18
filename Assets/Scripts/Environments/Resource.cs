@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Resource : MonoBehaviour
@@ -19,5 +20,17 @@ public class Resource : MonoBehaviour
 
         if (capacity <= 0)
             Destroy(gameObject);
+    }
+
+    public void Fishing(Vector3 hitPoint)
+    {
+        for (int i = 0; i < quantityPerHit; i++)
+        {
+            if (capacity <= 0) { break; }
+            capacity -= 1;
+            GameObject fish = Instantiate(itemToGive.dropPrefab, hitPoint, Quaternion.LookRotation(PlayerController.instance.transform.position, Vector3.up));
+            fish.GetComponent<Rigidbody>().AddForce((PlayerController.instance.transform.position - fish.transform.position).normalized*700f);
+        }
+
     }
 }
