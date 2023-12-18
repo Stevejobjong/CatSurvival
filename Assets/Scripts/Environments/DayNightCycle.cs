@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DayNightCycle : MonoBehaviour
 {
+    public int day = 1;
+
     [Range(0.0f, 1.0f)]
     public float time;
     public float fullDayLength;
@@ -33,8 +35,7 @@ public class DayNightCycle : MonoBehaviour
 
     private void Update()
     {
-        time = (time + timeRate * Time.deltaTime) % 1.0f;
-
+        DayCycle();
         UpdateLighting(sun, sunColor, sunIntensity);
         UpdateLighting(moon, moonColor, moonIntensity);
 
@@ -56,5 +57,15 @@ public class DayNightCycle : MonoBehaviour
             go.SetActive(false);
         else if (lightSource.intensity > 0 && !go.activeInHierarchy)
             go.SetActive(true);
+    }
+
+    public void DayCycle()
+    {
+        time = (time + timeRate * Time.deltaTime);
+        if (time >= 1)
+        {
+            time = 0;
+            day++;
+        }
     }
 }
