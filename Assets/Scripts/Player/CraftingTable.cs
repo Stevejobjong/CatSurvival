@@ -9,10 +9,6 @@ public class CraftingTable : MonoBehaviour
 {
     public GameObject craftingWindow;
 
-    [Header("Events")]
-    public UnityEvent onOpenCraftTable;
-    public UnityEvent onCloseCraftTable;
-
     public static CraftingTable instance;
 
     private PlayerController controller;
@@ -41,13 +37,11 @@ public class CraftingTable : MonoBehaviour
         if (craftingWindow.activeInHierarchy)
         {
             craftingWindow.SetActive(false);
-            onCloseCraftTable?.Invoke();
             controller.ToggleCursor(false);
         }
         else
         {
             craftingWindow.SetActive(true);
-            onOpenCraftTable?.Invoke();
             controller.ToggleCursor(true);
         }
     }
