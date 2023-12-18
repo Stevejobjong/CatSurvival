@@ -29,7 +29,7 @@ public class Resource : MonoBehaviour
             if (capacity <= 0) { break; }
             capacity -= 1;
             GameObject fish = Instantiate(itemToGive.dropPrefab, hitPoint, Quaternion.LookRotation(PlayerController.instance.transform.position, Vector3.up));
-            fish.GetComponent<Rigidbody>().AddForce((PlayerController.instance.transform.position - fish.transform.position).normalized*700f);
+            fish.GetComponent<Rigidbody>().AddForce(((PlayerController.instance.transform.position - fish.transform.position).normalized+Vector3.up)* 300);
         }
 
     }
