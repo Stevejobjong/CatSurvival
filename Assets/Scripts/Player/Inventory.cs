@@ -211,6 +211,8 @@ public class Inventory : MonoBehaviour
                         condition.Heal(selectedItem.item.consumables[i].value); break;
                     case ConsumableType.Hunger:
                         condition.Eat(selectedItem.item.consumables[i].value); break;
+                    case ConsumableType.Thirsty:
+                        condition.Drink(selectedItem.item.consumables[i].value); break;
                 }
             }
         }

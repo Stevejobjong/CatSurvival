@@ -43,6 +43,7 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     public Condition health;
     public Condition hunger;
     public Condition stamina;
+    public Condition thirsty;
 
     public float noHungerHealthDecay;
 
@@ -53,22 +54,31 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         health.curValue = health.startValue;
         hunger.curValue = hunger.startValue;
         stamina.curValue = stamina.startValue;
+        thirsty.curValue = thirsty.startValue;
     }
 
     // Update is called once per frame
     void Update()
     {
         hunger.Subtract(hunger.decayRate * Time.deltaTime);
+        thirsty.Subtract(thirsty.decayRate * Time.deltaTime);
         stamina.Add(stamina.regenRate * Time.deltaTime);
 
-        if (hunger.curValue == 0.0f)
+        if (hunger.curValue == 0.0f ) // 배고픔 혹은 목마름 둘 중 하나라도 0이될 경우 체력 감소
             health.Subtract(noHungerHealthDecay * Time.deltaTime);
-
+        if (thirsty.curValue == 0.0f) // 배고픔 혹은 목마름 둘 중 하나라도 0이될 경우 체력 감소
+            health.Subtract(noHungerHealthDecay * Time.deltaTime);
         if (health.curValue == 0.0f)
             Die();
 
-        health.uiBar.fillAmount = health.GetPercentage();
-        hunger.uiBar.fillAmount = hunger.GetPercentage();
+        //health.uiBar = UIManager.Instance.health;
+        //hunger.uiBar = UIManager.Instance.hunger;
+        //thirsty.uiBar = UIManager.Instance.thirsty;
+        //stamina.uiBar = UIManager.Instance.stamina;
+
+        health.uiBar.fillAmount = health.GetPercentage();        
+        hunger.uiBar.fillAmount = hunger.GetPercentage();        
+        thirsty.uiBar.fillAmount = thirsty.GetPercentage();        
         stamina.uiBar.fillAmount = stamina.GetPercentage();
     }
 
@@ -80,6 +90,11 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     public void Eat(float amount)
     {
         hunger.Add(amount);
+    }
+
+    public void Drink(float amount)
+    {
+        thirsty.Add(amount);
     }
 
     public bool UseStamina(float amount)
