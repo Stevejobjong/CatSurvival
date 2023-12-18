@@ -55,6 +55,11 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         hunger.curValue = hunger.startValue;
         stamina.curValue = stamina.startValue;
         thirsty.curValue = thirsty.startValue;
+
+        health.uiBar = UIManager.Instance.health;
+        hunger.uiBar = UIManager.Instance.hunger;
+        thirsty.uiBar = UIManager.Instance.thirsty;
+        stamina.uiBar = UIManager.Instance.stamina;
     }
 
     // Update is called once per frame
@@ -71,10 +76,6 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         if (health.curValue == 0.0f)
             Die();
 
-        //health.uiBar = UIManager.Instance.health;
-        //hunger.uiBar = UIManager.Instance.hunger;
-        //thirsty.uiBar = UIManager.Instance.thirsty;
-        //stamina.uiBar = UIManager.Instance.stamina;
 
         health.uiBar.fillAmount = health.GetPercentage();        
         hunger.uiBar.fillAmount = hunger.GetPercentage();        
