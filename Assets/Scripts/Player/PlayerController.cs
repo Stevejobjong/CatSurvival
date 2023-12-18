@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //마우스 커서 잠금(안보이게)
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     //FixedUpdate는 주로 물리 작업
