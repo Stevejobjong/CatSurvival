@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ddef9a8e43a76245b71949c7e23d61f, type: 3}
+  m_Name: Fish1
+  m_EditorClassIdentifier: 
+  displayName: "\uBB3C\uACE0\uAE30"
+  description: "\uB9DB\uC740 \uD3C9\uBC94\uD558\uB2E4."
+  type: 2
+  icon: {fileID: 21300000, guid: 71ed0f8a650cbed468801e24233f30e6, type: 3}
+  dropPrefab: {fileID: 3768900931705596163, guid: 04c856d091afa584b91ade8a747eb739, type: 3}
+  canStack: 1
+  maxStackAmount: 10
+  consumables:
+  - type: 0
+    value: 30
+  - type: 1
+    value: 30
+  equipPrefab: {fileID: 0}
