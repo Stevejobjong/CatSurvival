@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6007797601247511064}
   m_Layer: 0
   m_Name: StaminaImage
-  m_TagString: Untagged
+  m_TagString: ConditionUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 9028333022503661188}
   m_Layer: 0
   m_Name: HungerImage
-  m_TagString: Untagged
+  m_TagString: ConditionUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 8148894791503257807}
   m_Layer: 0
   m_Name: HealthImage
-  m_TagString: Untagged
+  m_TagString: ConditionUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -591,7 +591,7 @@ GameObject:
   - component: {fileID: 5250785926380645277}
   m_Layer: 0
   m_Name: ThirstyImage
-  m_TagString: Untagged
+  m_TagString: ConditionUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
