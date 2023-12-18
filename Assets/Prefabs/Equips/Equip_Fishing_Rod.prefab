@@ -106,7 +106,7 @@ MonoBehaviour:
   doesGatherFish: 1
   doesDealDamage: 0
   damage: 0
-  useStamina: 10
+  useStamina: 30
 --- !u!95 &8452255318742878528
 Animator:
   serializedVersion: 5
