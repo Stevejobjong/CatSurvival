@@ -65,7 +65,7 @@ public class EquipTool : Equip
         }
     }
     public void OnFishing()
-    {
+    {        
         Ray ray = camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, fishingDistance))
@@ -74,6 +74,10 @@ public class EquipTool : Equip
             {
                 print("´ê¾Ò´Ù");
                 resource.Fishing(hit.point);
+
+                //Äù½ºÆ®
+                QuestManager.Instance.NumberForDone++;
+                QuestManager.Instance.FishingQuest(QuestManager.Instance.NumberForDone);
             }
 
         }
