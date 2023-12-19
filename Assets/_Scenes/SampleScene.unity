@@ -677,11 +677,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46945fa5e4eefb743aff9e92a725624f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySpawn: {fileID: 0}
   _Player: {fileID: 7304457526176843343, guid: 6c7a3ca28f9ed1a498364d460124232b, type: 3}
-  _NPC: {fileID: 8007392740572416520, guid: 341502a7488a6f543b0ad86c3b4d9384, type: 3}
-  _Resources: {fileID: 3570643943461153355, guid: 976661d33581021409b1dc2aec1d7675, type: 3}
-  _CampFire: {fileID: 7205796226522882185, guid: f70b2af749dece34eb97d147df741856, type: 3}
-  _EventSystem: {fileID: 7755166958099591913, guid: 58ebc3fc308ed214db6b384b48334c02, type: 3}
+  _NPC: {fileID: 8007392740572416520, guid: a98f093df494b2142a7e5a3a1b325511, type: 3}
+  _Resources: {fileID: 3570643943461153355, guid: 86865cf84415d704d9b131e50b44f333, type: 3}
+  _CampFire: {fileID: 7205796226522882185, guid: d8b20f71f5db2d240ba7fe8c0f84c8b5, type: 3}
+  _EventSystem: {fileID: 7755166958099591913, guid: 46084071ce3318c4abdfa2d5af0b7f4b, type: 3}
   _Airplane: {fileID: 6242241491593924479, guid: 0ab0e7260b65c2b4c8877ebbaacf121e, type: 3}
   _Environments: {fileID: 7253014379399885620, guid: 302f9270c40ea514c921b423eea7347c, type: 3}
   _UI: {fileID: 3413985328616985507, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
