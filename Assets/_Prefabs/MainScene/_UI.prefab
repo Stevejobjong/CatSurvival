@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 3775029782786101880}
   - component: {fileID: 4361718024448152377}
   m_Layer: 0
-  m_Name: 'DropButton '
+  m_Name: DropButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

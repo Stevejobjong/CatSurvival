@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class DrinkWater : MonoBehaviour
 {
-    public TextMeshProUGUI promptText;
+    public TextMeshProUGUI drinkText;
 
 
     private void Awake()
@@ -15,13 +15,13 @@ public class DrinkWater : MonoBehaviour
     }
     private void Start()
     {
-        promptText = GameManager.Instance._UI.transform.Find("HUD_Canvas/DrinkText").GetComponent<TextMeshProUGUI>();
+        drinkText = GameManager.Instance._UI.transform.Find("HUD_Canvas/DrinkText").GetComponent<TextMeshProUGUI>();
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            promptText.gameObject.SetActive(true);
+            drinkText.gameObject.SetActive(true);
         }        
     }
     public void OnInteract(InputAction.CallbackContext context)
@@ -37,7 +37,7 @@ public class DrinkWater : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            promptText.gameObject.SetActive(false);
+            drinkText.gameObject.SetActive(false);
         }
             
     }
