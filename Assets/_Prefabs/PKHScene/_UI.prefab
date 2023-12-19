@@ -2662,7 +2662,7 @@ GameObject:
   - component: {fileID: 1607592723793006422}
   - component: {fileID: 1555134101149383943}
   m_Layer: 0
-  m_Name: NewQuest
+  m_Name: NewQuest_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
