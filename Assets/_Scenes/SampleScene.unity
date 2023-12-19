@@ -759,6 +759,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3114618232863630487, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
   m_PrefabInstance: {fileID: 2091330013}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1287739316 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1555134101149383943, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
+  m_PrefabInstance: {fileID: 2091330013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1352115354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1081,6 +1092,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7854437058635000933, guid: 98d2b04cc28687140932e7ff71c95be5, type: 3}
+      propertyPath: questText
+      value: 
+      objectReference: {fileID: 1287739316}
     - target: {fileID: 8839820485340605182, guid: 98d2b04cc28687140932e7ff71c95be5, type: 3}
       propertyPath: m_Name
       value: Managers
@@ -1240,18 +1255,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1782205042}
-    - target: {fileID: 680638654229890422, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnEquipButton
-      objectReference: {fileID: 0}
     - target: {fileID: 2919676237425752196, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1782205042}
-    - target: {fileID: 2919676237425752196, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnUnEquipButton
-      objectReference: {fileID: 0}
     - target: {fileID: 3413985328616985507, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
       propertyPath: m_Name
       value: _UI
@@ -1304,17 +1311,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1782205042}
-    - target: {fileID: 3968441615121693491, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnUseButton
-      objectReference: {fileID: 0}
     - target: {fileID: 4361718024448152377, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1782205042}
-    - target: {fileID: 4361718024448152377, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnDropButton
+    - target: {fileID: 8061775926843684728, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
+      propertyPath: m_Name
+      value: NewQuest_Text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
