@@ -1,12 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
     public GameObject enemySpawn;
 
     [Header("Scene")]
@@ -21,6 +20,23 @@ public class GameManager : MonoBehaviour
     public GameObject _Water;
     public GameObject _Fishingrod;
     public GameObject _Pickaxe;
+   
+    [Header("DATE")]
+    public int year = 2024;
+    public int current = 1;
+    public int month = 3;
+    public int day = 1;
+    public int hour = 0;
+
+    [Header("Weather")]
+    public float RainProbability = 10;
+
+    [HideInInspector]
+    public float WorldTemperature = 0;
+    [HideInInspector]
+    public float CurrentTemperature = 0;
+    [HideInInspector]
+    public float IncreaseTemperature = 0;
 
     private void Awake()
     {
@@ -43,5 +59,4 @@ public class GameManager : MonoBehaviour
         _Fishingrod = Instantiate(_Fishingrod, new Vector3(14.2f, 0.2f, 33.61f), Quaternion.identity);
         _Pickaxe = Instantiate(_Pickaxe, new Vector3(13.2f, 0.2f, 33.61f), Quaternion.identity);
     }
-
 }

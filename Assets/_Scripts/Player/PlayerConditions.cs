@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -44,6 +44,9 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     public Condition hunger;
     public Condition stamina;
     public Condition thirsty;
+    public Condition temperature;
+
+    public bool isWet;
 
     public float noHungerHealthDecay;
 
@@ -55,11 +58,15 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         hunger.curValue = hunger.startValue;
         stamina.curValue = stamina.startValue;
         thirsty.curValue = thirsty.startValue;
+        temperature.curValue = temperature.startValue;
+
+
 
         health.uiBar = UIManager.Instance.health;
         hunger.uiBar = UIManager.Instance.hunger;
         thirsty.uiBar = UIManager.Instance.thirsty;
         stamina.uiBar = UIManager.Instance.stamina;
+        temperature.uiBar = UIManager.Instance.temperature;
     }
 
     // Update is called once per frame
@@ -69,18 +76,24 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         thirsty.Subtract(thirsty.decayRate * Time.deltaTime);
         stamina.Add(stamina.regenRate * Time.deltaTime);
 
-        if (hunger.curValue == 0.0f ) // ¹è°íÇÄ È¤Àº ¸ñ¸¶¸§ µÑ Áß ÇÏ³ª¶óµµ 0ÀÌµÉ °æ¿ì Ã¼·Â °¨¼Ò
+        if (hunger.curValue == 0.0f)
             health.Subtract(noHungerHealthDecay * Time.deltaTime);
-        if (thirsty.curValue == 0.0f) // ¹è°íÇÄ È¤Àº ¸ñ¸¶¸§ µÑ Áß ÇÏ³ª¶óµµ 0ÀÌµÉ °æ¿ì Ã¼·Â °¨¼Ò
+        if (thirsty.curValue == 0.0f)
             health.Subtract(noHungerHealthDecay * Time.deltaTime);
+        // ë°°ê³ í”” í˜¹ì€ ëª©ë§ˆë¦„ ë‘˜ ì¤‘ í•˜ë‚˜ë¼ë„ 0ì´ë  ê²½ìš° ì²´ë ¥ ê°ì†Œ
         if (health.curValue == 0.0f)
             Die();
 
+        //ì €ì²´ì˜¨ì¦ ê¸°ë¯¹ ì¶”ê°€ì˜ˆì •
+        ColdtemperatureRegulation(temperature.decayRate * Time.deltaTime, temperature.regenRate * Time.deltaTime, isWet);
 
-        health.uiBar.fillAmount = health.GetPercentage();        
-        hunger.uiBar.fillAmount = hunger.GetPercentage();        
-        thirsty.uiBar.fillAmount = thirsty.GetPercentage();        
+
+
+        health.uiBar.fillAmount = health.GetPercentage();
+        hunger.uiBar.fillAmount = hunger.GetPercentage();
+        thirsty.uiBar.fillAmount = thirsty.GetPercentage();
         stamina.uiBar.fillAmount = stamina.GetPercentage();
+        temperature.uiBar.fillAmount = temperature.GetPercentage();
     }
 
     public void Heal(float amount)
@@ -107,9 +120,25 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         return true;
     }
 
+    public void ColdtemperatureRegulation(float decrease, float increased, bool isWet) //ì˜¨ë„ ì¡°ì ˆ
+    {
+        if (isWet)
+        {
+            temperature.Subtract(decrease);
+        }
+        else
+        {
+            if (temperature.curValue < 36.3f)
+            {
+                temperature.Add(increased);
+            }
+        }
+
+    }
+
     public void Die()
     {
-        Debug.Log("ÇÃ·¹ÀÌ¾î°¡ Á×¾ú´Ù.");
+        Debug.Log("í”Œë ˆì´ì–´ê°€ ì£½ì—ˆë‹¤.");
     }
 
     public void TakePhysicalDamage(int damageAmount)

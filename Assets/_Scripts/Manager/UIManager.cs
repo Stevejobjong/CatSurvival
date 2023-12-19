@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [HideInInspector] public Image hunger;
     [HideInInspector] public Image thirsty;
     [HideInInspector] public Image stamina;
+    [HideInInspector] public Image temperature;
 
     void Awake()
     {
@@ -30,7 +31,8 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         ConditionParent = GameManager.Instance._UI.transform.Find("HUD_Canvas/PlayerCondition");
-        GameObject condition = Instantiate(ConditionPrefab, ConditionParent);
+        GameObject condition = Instantiate(ConditionPrefab, ConditionParent); //시작시 condition추가
+
         SetImage();
     }
     void SetImage()
@@ -51,6 +53,9 @@ public class UIManager : MonoBehaviour
                     break;
                 case "HealthImage":
                     health = go[i].GetComponent<Image>();
+                    break;
+                case "TemperatureImage":
+                    temperature = go[i].GetComponent<Image>();
                     break;
             }
         }
