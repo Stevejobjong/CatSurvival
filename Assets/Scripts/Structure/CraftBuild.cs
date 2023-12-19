@@ -75,12 +75,13 @@ public class CraftBuild : MonoBehaviour
     }
 
     public void CreateBtnClick(int craftNum)
-    {
+    {        
         varPreviewCraft = Instantiate(craftCampfire[craftNum].previewCraft, playerPosition.position + playerPosition.forward, Quaternion.identity);
         varPreviewCraft.transform.parent = playerPosition;
         varBuildCraft = craftCampfire[craftNum].buildCraft;
         isPreviewActivated = true;
         craftingWindow.SetActive(false);
+        PlayerController.instance.ToggleCursor(false);
     }
 
     //private void Cancle()

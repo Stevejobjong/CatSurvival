@@ -641,9 +641,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 193388647}
-  - {fileID: 718637941}
-  - {fileID: 689964356}
+  - {fileID: 1050984981}
   m_Father: {fileID: 726112408}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -736,7 +734,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   range: 10
-  craftingWindow: {fileID: 144247013}
+  craftingWindow: {fileID: 1050984980}
 --- !u!1 &177063084
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,12 +836,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193388646}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 144247014}
+  m_Father: {fileID: 1050984981}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2539,7 +2537,6 @@ GameObject:
   - component: {fileID: 689964356}
   - component: {fileID: 689964359}
   - component: {fileID: 689964358}
-  - component: {fileID: 689964360}
   m_Layer: 0
   m_Name: CraftBG
   m_TagString: Untagged
@@ -2554,13 +2551,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689964355}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1317525664}
-  m_Father: {fileID: 144247014}
+  m_Father: {fileID: 1050984981}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2606,28 +2603,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689964355}
   m_CullTransparentMesh: 1
---- !u!114 &689964360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 689964355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6706494c7fb3d144ca2c478a07e24d7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  craftCampfire:
-  - craftName: Campfire
-    buildCraft: {fileID: 501295248943222296, guid: d6a5e2c4aefa6804b8f7d2af9a9676b5, type: 3}
-    previewCraft: {fileID: 501295248943222296, guid: 02c35313ad0f5cc46a1bf8c9fb79735f, type: 3}
-  playerPosition: {fileID: 1351297583}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  range: 10
-  craftingWindow: {fileID: 144247013}
 --- !u!1 &697883115
 GameObject:
   m_ObjectHideFlags: 0
@@ -3111,7 +3086,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 12879171}
-  m_Father: {fileID: 144247014}
+  m_Father: {fileID: 1050984981}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4661,6 +4636,45 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1050984980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1050984981}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1050984981
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050984980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 193388647}
+  - {fileID: 718637941}
+  - {fileID: 689964356}
+  m_Father: {fileID: 144247014}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1071669882
 GameObject:
   m_ObjectHideFlags: 0
@@ -5014,7 +5028,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 689964360}
+      - m_Target: {fileID: 144247018}
         m_TargetAssemblyTypeName: CraftBuild, Assembly-CSharp
         m_MethodName: CreateBtnClick
         m_Mode: 3
@@ -6008,7 +6022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb32214cc5f33e43bff86fb7c36b3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftingWindow: {fileID: 144247013}
+  craftingWindow: {fileID: 1050984980}
 --- !u!1 &1391886459
 GameObject:
   m_ObjectHideFlags: 0
