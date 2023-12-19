@@ -163,12 +163,12 @@ Transform:
   m_Children:
   - {fileID: 1336161844799074677}
   - {fileID: 3015481875272181993}
+  - {fileID: 3599200633686833309}
   - {fileID: 4831122918992838936}
   - {fileID: 2953115515118508079}
   - {fileID: 94146530601604693}
-  - {fileID: 3599200633686833309}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &376846149566897435
 PrefabInstance:
