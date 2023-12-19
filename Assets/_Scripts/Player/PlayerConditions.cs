@@ -77,10 +77,10 @@ public class PlayerConditions : MonoBehaviour, IDamagable
             Die();
 
 
-        //health.uiBar.fillAmount = health.GetPercentage();        
-        //hunger.uiBar.fillAmount = hunger.GetPercentage();        
-        //thirsty.uiBar.fillAmount = thirsty.GetPercentage();        
-        //stamina.uiBar.fillAmount = stamina.GetPercentage();
+        health.uiBar.fillAmount = health.GetPercentage();        
+        hunger.uiBar.fillAmount = hunger.GetPercentage();        
+        thirsty.uiBar.fillAmount = thirsty.GetPercentage();        
+        stamina.uiBar.fillAmount = stamina.GetPercentage();
     }
 
     public void Heal(float amount)

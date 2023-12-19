@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using static UnityEditor.Progress;
 
 public class ItemSlot
@@ -51,6 +53,7 @@ public class Inventory : MonoBehaviour
     }
     private void Start()
     {
+        InitInstance();
         inventoryWindow.SetActive(false);
         slots = new ItemSlot[uiSlots.Length];
 
@@ -62,6 +65,38 @@ public class Inventory : MonoBehaviour
         }
 
         ClearSeletecItemWindow();
+    }
+
+    private void InitInstance()
+    {
+        //잦은 Find를 피하기 위해 캐싱
+        GameObject UI = GameManager.Instance._UI;
+        GameObject Slots = UI.transform.Find("InventoryCanvas/Slots").gameObject;
+        GameObject InfoBG = UI.transform.Find("InventoryCanvas/InfoBG").gameObject;
+
+        //인벤토리 텍스트 설정
+        selectedItemName = InfoBG.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        selectedItemDescription = InfoBG.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        selectedItemStatNames = InfoBG.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+        selectedItemStatValues = InfoBG.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+
+        //버튼 설정
+        useButton = InfoBG.transform.GetChild(4).gameObject;
+        equipButton = InfoBG.transform.GetChild(5).gameObject;
+        unEquipButton = InfoBG.transform.GetChild(6).gameObject;
+        dropButton = InfoBG.transform.GetChild(7).gameObject;
+        useButton.GetComponent<Button>().onClick.AddListener(OnUseButton);
+        equipButton.GetComponent<Button>().onClick.AddListener(OnEquipButton);
+        unEquipButton.GetComponent<Button>().onClick.AddListener(OnUnEquipButton);
+        dropButton.GetComponent<Button>().onClick.AddListener(OnDropButton);
+
+        int numOfChild = Slots.transform.childCount;
+        for(int i= 0; i < numOfChild; i++)
+        {
+            uiSlots[i] = Slots.transform.GetChild(i).GetComponent<ItemSlotUI>();
+        }
+
+        inventoryWindow = UI.transform.Find("InventoryCanvas").gameObject;
     }
 
     public void OnInventoryButton(InputAction.CallbackContext callbackContext)

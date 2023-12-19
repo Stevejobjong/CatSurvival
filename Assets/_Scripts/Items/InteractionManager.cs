@@ -24,10 +24,10 @@ public class InteractionManager : MonoBehaviour
     public TextMeshProUGUI promptText;
     private Camera camera;
 
-
     void Start()
     {
         camera = Camera.main;
+        promptText = GameManager.Instance._UI.transform.Find("HUD_Canvas/PromptText").GetComponent<TextMeshProUGUI>();
     }
 
     void Update()

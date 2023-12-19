@@ -13,6 +13,10 @@ public class DrinkWater : MonoBehaviour
     {
         //condition = PlayerConditions.
     }
+    private void Start()
+    {
+        promptText = GameManager.Instance._UI.transform.Find("HUD_Canvas/DrinkText").GetComponent<TextMeshProUGUI>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

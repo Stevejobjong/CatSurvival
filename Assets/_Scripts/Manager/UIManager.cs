@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject); // 중복 인스턴스가 생성될 경우 제거
         }
 
+        ConditionParent = GameManager.Instance._UI.transform.Find("HUD_Canvas/PlayerCondition");
         GameObject condition = Instantiate(ConditionPrefab, ConditionParent);
         SetImage();
 
