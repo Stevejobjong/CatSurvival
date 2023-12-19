@@ -8,7 +8,7 @@ public class ItemObject : MonoBehaviour, IInteractable
 
     public string GetInteractPrompt()
     {
-        return string.Format("Pickup {0}", item.displayName);
+        return string.Format("<상호작용> {0}", item.displayName);
     }
 
     public void OnInteract()
