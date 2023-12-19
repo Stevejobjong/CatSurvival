@@ -33,8 +33,8 @@ public class DayNightCycle : MonoBehaviour
 
     private void Update()
     {
-        time = (time + timeRate * Time.deltaTime) % 1.0f;
-
+        DayCycle();
+        SetTime();
         UpdateLighting(sun, sunColor, sunIntensity);
         UpdateLighting(moon, moonColor, moonIntensity);
 
@@ -56,5 +56,20 @@ public class DayNightCycle : MonoBehaviour
             go.SetActive(false);
         else if (lightSource.intensity > 0 && !go.activeInHierarchy)
             go.SetActive(true);
+    }
+
+    public void DayCycle()
+    {
+        time = (time + timeRate * Time.deltaTime);
+        if (time >= 1)
+        {
+            time = 0;
+            GameManager.Instance.day++;
+        }
+    }
+
+    public void SetTime()
+    {
+        GameManager.Instance.hour = (int)(time * 24);
     }
 }
