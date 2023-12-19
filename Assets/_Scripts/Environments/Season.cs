@@ -11,21 +11,26 @@ public class Season : MonoBehaviour
 
     private float[] monthlyTemperatures = new float[12]; // 12개월 온도를 저장할 배열
 
-    public void SeasonalChanges() //계절변화에 따른 온도 변화
+    public void Update()
+    {
+        SeasonalChanges(GameManager.Instance.month);
+    }
+    public void SeasonalChanges(int month) //계절변화에 따른 온도 변화
     {
         float temperatureDifference = HighTemperature - LowTemperature;
         float increment = temperatureDifference / 6.0f; // 6개월에 걸쳐 증가되는 값을 계산
 
         // 1월부터 7월까지의 온도 설정
-        for (int i = 0; i <= 6; i++)
+        if (month < 8)
         {
-            monthlyTemperatures[i] = LowTemperature + (increment * i);
+            monthlyTemperatures[month - 1] = LowTemperature + (increment * month-1);
+            GameManager.Instance.WorldTemperature = monthlyTemperatures[month - 1];
         }
-
-        // 8월부터 12월까지의 온도 설정 (7월 온도에서 감소하도록 설정)
-        for (int i = 7; i < 12; i++)
+        else
         {
-            monthlyTemperatures[i] = HighTemperature - (increment * (i - 6));
+            // 8월부터 12월까지의 온도 설정 (7월 온도에서 감소하도록 설정)
+            monthlyTemperatures[month - 1] = HighTemperature - (increment * (month - 8));
+            GameManager.Instance.WorldTemperature = monthlyTemperatures[month - 1];
         }
     }
 

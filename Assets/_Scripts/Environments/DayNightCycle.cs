@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class DayNightCycle : MonoBehaviour
 {
-    public int day = 1;
-
     [Range(0.0f, 1.0f)]
     public float time;
     public float fullDayLength;
@@ -36,6 +34,7 @@ public class DayNightCycle : MonoBehaviour
     private void Update()
     {
         DayCycle();
+        SetTime();
         UpdateLighting(sun, sunColor, sunIntensity);
         UpdateLighting(moon, moonColor, moonIntensity);
 
@@ -65,7 +64,12 @@ public class DayNightCycle : MonoBehaviour
         if (time >= 1)
         {
             time = 0;
-            day++;
+            GameManager.Instance.day++;
         }
+    }
+
+    public void SetTime()
+    {
+        GameManager.Instance.hour = (int)(time * 24);
     }
 }
