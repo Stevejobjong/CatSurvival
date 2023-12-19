@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public int damage = 5;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            PlayerController.instance.GetComponent<IDamagable>().TakePhysicalDamage(damage);
             Destroy(gameObject);
         }
 

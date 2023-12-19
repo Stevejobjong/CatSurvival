@@ -203,7 +203,7 @@ public class RangedEnemy : MonoBehaviour, IDamagable
     {
         Vector3 directionToPlayer = PlayerController.instance.transform.position - transform.position;
         float angle = Vector3.Angle(transform.forward, directionToPlayer);
-        return angle < fieldOfView * 0.5f;
+        return angle < fieldOfView * 0.3f;
     }
 
     private void SetState(AIState newState)
