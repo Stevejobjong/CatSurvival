@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class WetConditionController : MonoBehaviour
 {
-    private PlayerConditions playerConditions = new PlayerConditions();
+    private PlayerConditions playerConditions;
     private Coroutine dryCoroutine;
     private void Awake()
     {

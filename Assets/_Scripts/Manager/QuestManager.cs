@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,8 +6,9 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
     public TMP_Text questText;
-    public int NumberForDone;
-    //private int Quests;
+    [HideInInspector] public bool Fishing;
+    [HideInInspector] public bool Drink;
+    [HideInInspector] public int QuestCount;
 
     public static QuestManager Instance { get; private set; }
 
@@ -21,51 +22,59 @@ public class QuestManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        NumberForDone = 0;
+        ResetCount();
     }
-    void CompleteQuest()
+
+    void ResetCount()
     {
-        //Quests++;
-        questText.text = "Äù½ºÆ® ¿Ï·á!";
-        NumberForDone = 0; //ÃÊ±âÈ­
-
-
-        //string Questnum = Quests.ToString();
-        //string QuestName = "NewQuest" + Questnum;
-        //Invoke(QuestName, 3f);
+        Fishing = false;
+        Drink = false;
     }
 
     void Start()
     {
-        FishingQuest(NumberForDone);
+        DrinkWaterQuest(Drink);
     }
 
-    //void NewQuest1(int num)
-    //{
-    //    if (num > 6)
-    //    {
-    //        CompleteQuest();
-    //    }
-    //    questText.text = "³¬½ÃÇÏ±â" + num + " /6";
-    //}
 
+    public void DrinkWaterQuest(bool clear)
+    {
+        questText.text = "ë¬¼ê°€ë¡œ ê°€ì„œ ë¬¼ ë§ˆì‹œê¸°";
 
-    public void FishingQuest(int num)
+        if (clear)
+        {
+            questText.text = "í€˜ìŠ¤íŠ¸ ì™„ë£Œ!";
+            Invoke("EndDrinkQuest", 3f);            
+        }
+    }
+    void EndDrinkQuest()
+    {
+        FishingQuest(Fishing, QuestCount);
+    }
+
+    public void FishingQuest(bool clear, int count)
     {
         Debug.Log("Fishing");
-        questText.text = "³¬½ÃÇÏ±â (" + num + "/6)";
-        if (num > 5)
+        questText.text = "ë‚šì‹œí•˜ê¸° (" + count + "/6)";
+        if (clear)
         {
-            CompleteQuest();
+            questText.text = "í€˜ìŠ¤íŠ¸ ì™„ë£Œ!";
+            Invoke("EndFishingQuest", 3f);
+            QuestCount = 0;
+            //ë‹¤ìŒ í€˜ìŠ¤íŠ¸
         }
-        
+
     }
-    // ±âÅ¸ Äù½ºÆ®µé µé¾î°¥ ÀÚ¸®
+    void EndFishingQuest()
+    {
+        Ending();
+    }
+    // ê¸°íƒ€ í€˜ìŠ¤íŠ¸ë“¤ 
 
 
     public void Ending()
     {
-        questText.text = "Å»ÃâÇÏ±â";
+        questText.text = "íƒˆì¶œí•˜ê¸°";
     }
 
 }

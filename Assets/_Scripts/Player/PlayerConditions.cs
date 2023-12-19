@@ -47,7 +47,6 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     public Condition temperature;
 
     public bool isWet;
-    float normalTemperature = 36.5f; //정상 체온
 
     public float noHungerHealthDecay;
 
@@ -129,7 +128,7 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         }
         else
         {
-            if (temperature.curValue < normalTemperature)
+            if (temperature.curValue < 36.3f)
             {
                 temperature.Add(increased);
             }

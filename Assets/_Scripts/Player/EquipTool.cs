@@ -76,8 +76,16 @@ public class EquipTool : Equip
                 resource.Fishing(hit.point);
 
                 //Äù½ºÆ®
-                QuestManager.Instance.NumberForDone++;
-                QuestManager.Instance.FishingQuest(QuestManager.Instance.NumberForDone);
+                if(QuestManager.Instance.Fishing == false)
+                {
+                    QuestManager.Instance.QuestCount++;
+                    if (QuestManager.Instance.QuestCount == 6)
+                    {
+                        QuestManager.Instance.Fishing = true;
+                    }
+                    QuestManager.Instance.FishingQuest(QuestManager.Instance.Fishing, QuestManager.Instance.QuestCount);
+                }
+                
             }
 
         }
