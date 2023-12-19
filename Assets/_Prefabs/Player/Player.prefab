@@ -1197,6 +1197,7 @@ GameObject:
   - component: {fileID: 1365081230780075534}
   - component: {fileID: 7535776594398289910}
   - component: {fileID: 1795784481932105253}
+  - component: {fileID: 3476691704406008252}
   - component: {fileID: 6088183640772058415}
   m_Layer: 6
   m_Name: Player
@@ -1220,7 +1221,7 @@ Transform:
   - {fileID: 782442127048458385}
   - {fileID: 8386949066215968596}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &2861647529458246208
 CapsuleCollider:
@@ -1421,6 +1422,7 @@ MonoBehaviour:
   maxXLook: 85
   lookSensitivity: 0.2
   canLook: 1
+  condition: {fileID: 8175897322168300818}
 --- !u!114 &8175897322168300818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1454,6 +1456,21 @@ MonoBehaviour:
     regenRate: 5
     decayRate: 0
     uiBar: {fileID: 0}
+  thirsty:
+    curValue: 0
+    maxValue: 300
+    startValue: 280
+    regenRate: 0
+    decayRate: 2
+    uiBar: {fileID: 0}
+  temperature:
+    curValue: 0
+    maxValue: 40
+    startValue: 36.5
+    regenRate: 1
+    decayRate: 0.5
+    uiBar: {fileID: 0}
+  isWet: 0
   noHungerHealthDecay: 2
   onTakeDamage:
     m_PersistentCalls:
@@ -1565,6 +1582,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4dcd8f2dc477f5e4aa277ee503048ee8, type: 3}
   footstepThreshold: 0.3
   footstepRate: 0.5
+--- !u!114 &3476691704406008252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7304457526176843343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9f101f2c77a8c44b13c526c14eb8df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &6088183640772058415
 AudioSource:
   m_ObjectHideFlags: 0
