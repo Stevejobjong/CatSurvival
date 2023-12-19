@@ -173,7 +173,7 @@ public class RangedEnemy : MonoBehaviour, IDamagable
 
         yield return new WaitForSeconds(0.5f);
         FireProjectile();
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.2f);
         agent.isStopped = false;
 
     }

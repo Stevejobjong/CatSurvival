@@ -52,7 +52,6 @@ public class RangedEnemyA : MonoBehaviour
 
             if (isAttacking)
             {
-                // 플레이어를 바라보기
                 Vector3 directionToPlayer = player.position - transform.position;
                 Quaternion lookRotation = Quaternion.LookRotation(directionToPlayer);
                 transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
@@ -62,16 +61,13 @@ public class RangedEnemyA : MonoBehaviour
 
     void IdleMove()
     {
-        // 랜덤한 목적지 설정
         randomDestination = new Vector3(Random.Range(-10f, 10f), 0f, Random.Range(-10f, 10f));
 
-        // idle 상태에서 랜덤한 목적지로 이동
         StartCoroutine(MoveToDestination(randomDestination, idleMoveSpeed));
     }
 
     void Attack()
     {
-        // 총알 발사 로직 구현
         Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
     }
 
