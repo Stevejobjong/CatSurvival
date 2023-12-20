@@ -36,7 +36,7 @@ public class NPCSpawnManger : MonoBehaviour
     {
         float randomX = transform.position.x + Random.Range(-spawnRadius, spawnRadius);
         float randomZ = transform.position.z + Random.Range(-spawnRadius, spawnRadius);
-        Vector3 spawnPoint = new Vector3(randomX, 1, randomZ);
+        Vector3 spawnPoint = new Vector3(randomX, 10, randomZ);
         int randomNPC = Random.Range(0, NPCPrefabs.Length);
 
         Instantiate(NPCPrefabs[randomNPC], spawnPoint, Quaternion.identity);
