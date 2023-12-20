@@ -17,7 +17,7 @@ public class CraftingTable : MonoBehaviour
     private void Start()
     {
         
-        craftingWindow = GameManager.Instance._UI.transform.Find("CraftingCanvas/CraftingPanel").gameObject;
+        craftingWindow = GameManager.Instance._UI.transform.Find("Crafting/CraftingCanvas").gameObject;
         craftingWindow.SetActive(false);
     }
 

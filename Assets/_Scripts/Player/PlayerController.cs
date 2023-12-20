@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
+    public float runSpeed;
+    float runCooltime = 10.0f;
+    float runableTime = 10.0f;
     private Vector2 curMovementInput;
     public float jumpForce;
     public LayerMask groundLayerMask;
@@ -25,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public bool canLook = true;
-
+    public Animator heartAnim;
     private Rigidbody _rigidbody;
     public PlayerConditions condition;
 
@@ -46,6 +49,11 @@ public class PlayerController : MonoBehaviour
     //FixedUpdate는 주로 물리 작업
     private void FixedUpdate()
     {
+        runableTime += Time.deltaTime;
+        if (Input.GetKey(KeyCode.LeftShift) && runableTime > runCooltime)
+            runSpeed = 2.0f;
+        else
+            runSpeed = 1.0f;
         Move();
     }
 
@@ -61,8 +69,15 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
-        animator.SetFloat("Speed", dir.normalized.magnitude);
-        dir *= moveSpeed;
+        if (dir.magnitude > 0 && runSpeed > 1.5f && condition.stamina.curValue > 20)
+            condition.UseStamina(0.5f);
+        else if (condition.stamina.curValue <= 20)
+        {
+            heartAnim.SetTrigger("Heartbeat");
+            runableTime = 0.0f;
+        }
+        animator.SetFloat("Speed", dir.normalized.magnitude * runSpeed);
+        dir *= moveSpeed * runSpeed;
         dir.y = _rigidbody.velocity.y;
 
         _rigidbody.velocity = dir;

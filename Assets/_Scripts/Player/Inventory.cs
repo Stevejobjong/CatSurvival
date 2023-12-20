@@ -156,7 +156,7 @@ public class Inventory : MonoBehaviour
         ThrowItem(item);
     }
 
-    void ThrowItem(ItemData item)
+    public void ThrowItem(ItemData item)
     {
         Instantiate(item.dropPrefab, dropPosition.position, Quaternion.Euler(Vector3.one * Random.value * 360f));
     }
@@ -309,9 +309,51 @@ public class Inventory : MonoBehaviour
         UpdateUI();
     }
 
-    public void RemoveItem(ItemData item)
+    public bool UHaveItem(ItemData item, int num)
     {
-
+        bool have;
+        ItemSlot slotToStackTo = GetItemStack(item);
+        if (slotToStackTo != null)
+        {
+            if (slotToStackTo.quantity >= num)
+            {
+                have = true;
+                return have;
+            }
+            else
+            {
+                Debug.Log("아이템이 모자랍니다");
+                have = false;
+            }
+        }
+        else
+        {
+            Debug.Log("아이템이 없습니다.");
+            have = false;
+        }
+        return have;
+    }
+    
+    public void RemoveItem(ItemData item, int num)
+    {
+        ItemSlot slotToStackTo = GetItemStack(item);
+        if (slotToStackTo != null)
+        {
+            if(slotToStackTo.quantity >= num)
+            {
+                slotToStackTo.quantity -= num;
+                UpdateUI();
+                return;
+            }
+            else
+            {
+                Debug.Log("아이템이 모자랍니다");
+            }
+        }
+        else
+        {
+            Debug.Log("아이템이 없습니다.");
+        }
     }
 
     public bool HasItems(ItemData item, int quantity)
