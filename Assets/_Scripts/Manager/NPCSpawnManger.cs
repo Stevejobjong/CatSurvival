@@ -8,7 +8,7 @@ public class NPCSpawnManger : MonoBehaviour
     private GameObject[] NPCCount;
     //public Transform spawnPoint;
     private int currentNPCCount = 0;
-    private int maxNPCCount = 3;
+    public int maxNPCCount = 3;
     private int spawnRadius = 10;
     [SerializeField] private float spawnDelay;
     [SerializeField] private float maxSpawnDelay = 3f;

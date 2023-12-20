@@ -18,6 +18,7 @@ public class RangedEnemy : MonoBehaviour, IDamagable
 {
     [Header("Stats")]
     public bool ranged = false;
+    public bool enemy = false;
     public int health;
     public float walkSpeed;
     public float runSpeed;
@@ -81,17 +82,23 @@ public class RangedEnemy : MonoBehaviour, IDamagable
                 PassiveUpdate(); 
                 break;
             case AIState.Attacking: 
-                if (ranged)
+                if (enemy)
                 {
-                    RangedAttackingUpdate();
-                }
-                else
-                {
-                    AttackingUpdate();
+                    if (ranged)
+                    {
+                        RangedAttackingUpdate();
+                    }
+                    else
+                    {
+                        AttackingUpdate();
+                    }
                 }
                 break;
             case AIState.Fleeing: 
-                FleeingUpdate(); 
+                if (enemy)
+                {
+                    FleeingUpdate();
+                }
                 break;
         }
 
@@ -155,7 +162,7 @@ public class RangedEnemy : MonoBehaviour, IDamagable
         else
         {
             //agent.isStopped = true;
-
+            attackRate = 3f;
             if (Time.time - lastAttackTime > attackRate)
             {
                 lastAttackTime = Time.time;
@@ -193,8 +200,9 @@ public class RangedEnemy : MonoBehaviour, IDamagable
             Invoke("WanderToNewLocation", Random.Range(minWanderWaitTime, maxWanderWaitTime));
         }
 
-        if (playerDistance < detectDistance)
+        if (playerDistance < detectDistance && enemy == true)
         {
+            Debug.Log("attackWarlking");
             SetState(AIState.Attacking);
         }
     }
@@ -203,7 +211,14 @@ public class RangedEnemy : MonoBehaviour, IDamagable
     {
         Vector3 directionToPlayer = PlayerController.instance.transform.position - transform.position;
         float angle = Vector3.Angle(transform.forward, directionToPlayer);
-        return angle < fieldOfView * 0.3f;
+        if(ranged)
+        {
+            return angle < fieldOfView * 0.2f;
+        }
+        else
+        {
+            return angle < fieldOfView * 0.5f;
+        }
     }
 
     private void SetState(AIState newState)
@@ -305,11 +320,12 @@ public class RangedEnemy : MonoBehaviour, IDamagable
 
     void Die()
     {
-        for (int x = 0; x < dropOnDeath.Length; x++)
+        int randomDropItemsCount = Random.Range(0, 3);
+        for (int x = 0; x < randomDropItemsCount; x++)
         {
-            Instantiate(dropOnDeath[x].dropPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
+            int randomDropItem = Random.Range(0, dropOnDeath.Length);
+            Instantiate(dropOnDeath[randomDropItem].dropPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
         }
-
         Destroy(gameObject);
     }
 
