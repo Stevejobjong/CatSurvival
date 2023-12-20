@@ -136,7 +136,7 @@ public class QuestManager : MonoBehaviour
     }
     void EndFishingQuest()
     {
-        questText.text = "곰을 잡고 재료를 얻어 탈출하기";
+        questText.text = "비행기 근처에서 탈출 재료 확인 가능";
         Invoke("EndingText()", 3f);
     }
     // 기타 퀘스트들 
