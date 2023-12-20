@@ -1441,8 +1441,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e256082912fdb449fe1c48678a0f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 3
   runSpeed: 0
+  runableTime: 1
   jumpForce: 80
   groundLayerMask:
     serializedVersion: 2
@@ -1482,8 +1483,8 @@ MonoBehaviour:
     uiBar: {fileID: 0}
   stamina:
     curValue: 0
-    maxValue: 100
-    startValue: 100
+    maxValue: 200
+    startValue: 180
     regenRate: 5
     decayRate: 0
     uiBar: {fileID: 0}
@@ -1611,7 +1612,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2f96d3d47551ed848be9307342dcd667, type: 3}
   - {fileID: 8300000, guid: 4901040e735fd2547870b06a27124c49, type: 3}
   - {fileID: 8300000, guid: 4dcd8f2dc477f5e4aa277ee503048ee8, type: 3}
-  footstepThreshold: 1
+  footstepThreshold: 2
   footstepRate: 0.5
 --- !u!114 &3476691704406008252
 MonoBehaviour:
