@@ -13,8 +13,6 @@ public class ToolMaking : MonoBehaviour
 
 
     public GameObject CraftPanel;
-    public GameObject craftingWindow;
-    public GameObject craftingToolTabPanel;
 
 
     public Button CreatToolBtn;
@@ -25,20 +23,6 @@ public class ToolMaking : MonoBehaviour
     {
         CraftPanel.SetActive(false);
     }
-
-    //버튼 클릭
-    public void ChooseFurnitureTab()
-    {
-        craftingWindow.SetActive(true);
-        craftingToolTabPanel.SetActive(false);
-    }
-    public void ChooseToolTab()
-    {
-        craftingWindow.SetActive(false);
-        craftingToolTabPanel.SetActive(true);
-    }
-
-
 
 
     public void ClickAxe()

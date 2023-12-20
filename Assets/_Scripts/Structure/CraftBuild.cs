@@ -44,7 +44,7 @@ public class CraftBuild : MonoBehaviour
         }
 
         if (Input.GetButtonDown("Fire1"))
-        {
+        {           
             Debug.Log("Click");
             Build();
         }
@@ -65,8 +65,9 @@ public class CraftBuild : MonoBehaviour
 
     private void Build()
     {
-        if (isPreviewActivated)
-        {
+        Debug.Log("Build까지는 옴");
+        if (isPreviewActivated)            
+        {//여기로 안넘어감.
             Debug.Log("Create");
             Instantiate(varBuildCraft, varPreviewCraft.transform.position, Quaternion.identity);
             Destroy(varPreviewCraft);
