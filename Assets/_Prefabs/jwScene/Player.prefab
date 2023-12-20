@@ -1216,7 +1216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7304457526176843343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.1, y: 0, z: 31.5}
+  m_LocalPosition: {x: 43.81, y: 4.346, z: 4.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1442,6 +1442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  runSpeed: 0
   jumpForce: 80
   groundLayerMask:
     serializedVersion: 2
@@ -1610,7 +1611,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2f96d3d47551ed848be9307342dcd667, type: 3}
   - {fileID: 8300000, guid: 4901040e735fd2547870b06a27124c49, type: 3}
   - {fileID: 8300000, guid: 4dcd8f2dc477f5e4aa277ee503048ee8, type: 3}
-  footstepThreshold: 0.3
+  footstepThreshold: 1
   footstepRate: 0.5
 --- !u!114 &3476691704406008252
 MonoBehaviour:
