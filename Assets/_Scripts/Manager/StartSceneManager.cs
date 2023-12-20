@@ -27,9 +27,13 @@ public class StartSceneManager : MonoBehaviour
 
     }
 
-    public void OnStartButton()
+    public void OnClickStartButton()
     {
         StartCoroutine(GameStart());
+    }
+    public void OnClickExitButton()
+    {
+        Application.Quit();
     }
 
     IEnumerator GameStart()
