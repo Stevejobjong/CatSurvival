@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7246599283822304825}
   - component: {fileID: 2755765692088587528}
   m_Layer: 0
-  m_Name: NPC
+  m_Name: NPC_Enemy_Bear
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
