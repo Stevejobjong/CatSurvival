@@ -8,6 +8,9 @@ public class QuestManager : MonoBehaviour
     public TMP_Text questText;
     [HideInInspector] public bool fishing;
     [HideInInspector] public bool drink;
+    [HideInInspector] public bool isMakeAxe;
+    [HideInInspector] public bool isMakePick;
+    [HideInInspector] public bool isMakeFishingRod;
     [HideInInspector] public bool felling;
     [HideInInspector] public int QuestCount;
 
@@ -52,12 +55,28 @@ public class QuestManager : MonoBehaviour
 
     void EndDrinkQuest()
     {
-        Felling(fishing, QuestCount);
+        isMakeAxe = false;
+        MakeAxe(isMakeAxe);
+    }
+
+    public void MakeAxe(bool clear)
+    {
+        questText.text = "\"R\"을 눌러 도끼 만들기";
+        if (clear)
+        {
+            questText.text = "퀘스트 완료!";
+            Invoke("EndMakeAxe", 3f);
+        }
+    }
+        
+    void EndMakeAxe()
+    {
+        Felling(felling, QuestCount);
     }
 
     public void Felling(bool clear, int count) //벌목
     {
-        questText.text = "도끼로 나무 베기 (" + count + "/2)";
+        questText.text = "도끼로 나무 베기 (" + count + "/5)";
         if (clear)
         {
             questText.text = "퀘스트 완료!";
@@ -66,6 +85,39 @@ public class QuestManager : MonoBehaviour
     }
 
     void EndFelling()
+    {
+        isMakePick = false;
+        MakePick(isMakePick);
+    }
+
+    public void MakePick(bool clear)
+    {
+        questText.text = "\"R\"을 눌러 곡괭이 만들기";
+        if (clear)
+        {
+            questText.text = "퀘스트 완료!";
+            Invoke("EndMakePick", 3f);
+        }
+    }
+
+    void EndMakePick()
+    {
+        isMakeFishingRod = false;
+        MakeFishingRod(isMakeFishingRod);
+    }
+
+
+    public void MakeFishingRod(bool clear)
+    {
+        questText.text = "\"R\"을 눌러 낚시대 만들기";
+        if (clear)
+        {
+            questText.text = "퀘스트 완료!";
+            Invoke("EndMakeFishingRod", 3f);
+        }
+    }
+
+    void EndMakeFishingRod()
     {
         FishingQuest(fishing, QuestCount);
     }

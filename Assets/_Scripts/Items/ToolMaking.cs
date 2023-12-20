@@ -71,13 +71,24 @@ public class ToolMaking : MonoBehaviour
         switch(chooseTool)
         {
             case 0: //creat Axe
+                
                 if(Inventory.instance.UHaveItem(Wood, 3))
                 {
+                    if (!QuestManager.Instance.isMakeAxe)
+                    {
+                        QuestManager.Instance.isMakeAxe = true;
+                        QuestManager.Instance.MakeAxe(QuestManager.Instance.isMakeAxe);
+                    }
                     Inventory.instance.RemoveItem(Wood, 3); //唱公 力芭
                     Inventory.instance.ThrowItem(Axe);
                 }
                 break;
             case 1:
+                if (!QuestManager.Instance.isMakePick)
+                {
+                    QuestManager.Instance.isMakePick = true;
+                    QuestManager.Instance.MakePick(QuestManager.Instance.isMakePick);
+                }
                 if (Inventory.instance.UHaveItem(Wood, 5))
                 {
                     Inventory.instance.RemoveItem(Wood, 5); //唱公 力芭
@@ -94,6 +105,11 @@ public class ToolMaking : MonoBehaviour
                 }
                 break;
             case 3:
+                if (!QuestManager.Instance.isMakeFishingRod)
+                {
+                    QuestManager.Instance.isMakeFishingRod = true;
+                    QuestManager.Instance.MakeFishingRod(QuestManager.Instance.isMakeFishingRod);
+                }
                 if (Inventory.instance.UHaveItem(Wood, 1))
                 {
                     Inventory.instance.RemoveItem(Wood, 1); //唱公 力芭
