@@ -10,12 +10,12 @@ public class GameManager : MonoBehaviour
 
     [Header("Scene")]
     public GameObject _Player;
-    //public GameObject _NPC;
     public GameObject _Resources;
     public GameObject _CampFire;
     public GameObject _EventSystem;
     public GameObject _Airplane;
     public GameObject _Environments;
+    public GameObject _Environments_under;
     public GameObject _UI;
     public GameObject _Fishingrod;
     public GameObject _Pickaxe;
@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         _EventSystem = Instantiate(_EventSystem);
         _Airplane = Instantiate(_Airplane, new Vector3(43.81f, 3.81f, 4.72f), Quaternion.identity);
         _Environments = Instantiate(_Environments);
+        _Environments = Instantiate(_Environments_under);
         _UI = Instantiate(_UI);
         _Fishingrod = Instantiate(_Fishingrod, new Vector3(14.2f, 0.2f, 33.61f), Quaternion.identity);
         _Pickaxe = Instantiate(_Pickaxe, new Vector3(13.2f, 0.2f, 33.61f), Quaternion.identity);
