@@ -18,7 +18,7 @@ public class CraftBuild : MonoBehaviour
     private GameObject varPreviewCraft; // 미리보기 변수
     private GameObject varBuildCraft; // 실제 설치되는 구조물 변수
 
-    [SerializeField] private Transform playerPosition;
+    private Transform playerPosition;
     private RaycastHit hitInfor;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private float range;
@@ -32,7 +32,10 @@ public class CraftBuild : MonoBehaviour
     //    createBtn = GetComponent<Button>();
     //    createBtn?.onClick.AddListener(() => CreateBtnClick());
     //}
-
+    private void Awake()
+    {
+        playerPosition = PlayerController.instance.transform;
+    }
     private void Update()
     {
         if (isPreviewActivated)
@@ -55,7 +58,7 @@ public class CraftBuild : MonoBehaviour
     //        {
     //            Vector3 location = hitInfor.point;
     //            varPreviewCraft.transform.position = location;
-                
+
     //        }
     //    }
     //}
@@ -71,11 +74,12 @@ public class CraftBuild : MonoBehaviour
             craftingWindow.SetActive(false);
             varPreviewCraft = null;
             varBuildCraft = null;
+            PlayerController.instance.ToggleCursor(false);
         }
     }
 
     public void CreateBtnClick(int craftNum)
-    {        
+    {
         varPreviewCraft = Instantiate(craftCampfire[craftNum].previewCraft, playerPosition.position + playerPosition.forward, Quaternion.identity);
         varPreviewCraft.transform.parent = playerPosition;
         varBuildCraft = craftCampfire[craftNum].buildCraft;

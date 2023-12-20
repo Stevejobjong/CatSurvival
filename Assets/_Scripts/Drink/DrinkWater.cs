@@ -6,23 +6,27 @@ using UnityEngine.InputSystem;
 
 public class DrinkWater : MonoBehaviour
 {
-    public TextMeshProUGUI promptText;
+    public TextMeshProUGUI drinkText;
     private bool active;
-
     private void Awake()
     {
         active = false;
     }
+    private void Start()
+    {
+        drinkText = GameManager.Instance._UI.transform.Find("HUD_Canvas/DrinkText").GetComponent<TextMeshProUGUI>();
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
         {
-            promptText.gameObject.SetActive(true);
+            drinkText.gameObject.SetActive(true);
             active = true;
         }        
     }
     public void OnInteract(InputAction.CallbackContext context)
     {
+
         if (context.performed && active)
         {
             //물마시기 퀘스트
@@ -34,13 +38,13 @@ public class DrinkWater : MonoBehaviour
             PlayerController.instance.condition.Drink(10.0f);
         }
     }
-    
+
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if(other.gameObject.layer == LayerMask.NameToLayer("Water"))
         {
-            promptText.gameObject.SetActive(false);
+            drinkText.gameObject.SetActive(false);
             active = false;
         }
             

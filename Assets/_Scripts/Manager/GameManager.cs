@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public GameObject _Airplane;
     public GameObject _Environments;
     public GameObject _UI;
-    public GameObject _Water;
     public GameObject _Fishingrod;
     public GameObject _Pickaxe;
    
@@ -55,7 +54,6 @@ public class GameManager : MonoBehaviour
         _Airplane = Instantiate(_Airplane, new Vector3(31.93f, 0f, -23.23f), Quaternion.identity);
         _Environments = Instantiate(_Environments);
         _UI = Instantiate(_UI);
-        _Water = Instantiate(_Water);
         _Fishingrod = Instantiate(_Fishingrod, new Vector3(14.2f, 0.2f, 33.61f), Quaternion.identity);
         _Pickaxe = Instantiate(_Pickaxe, new Vector3(13.2f, 0.2f, 33.61f), Quaternion.identity);
     }

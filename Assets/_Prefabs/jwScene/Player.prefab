@@ -1199,6 +1199,8 @@ GameObject:
   - component: {fileID: 1795784481932105253}
   - component: {fileID: 3476691704406008252}
   - component: {fileID: 6088183640772058415}
+  - component: {fileID: 3045794427107820467}
+  - component: {fileID: 8377522894399731938}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1221,7 +1223,7 @@ Transform:
   - {fileID: 782442127048458385}
   - {fileID: 8386949066215968596}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &2861647529458246208
 CapsuleCollider:
@@ -1392,7 +1394,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8377522894399731938}
         m_TargetAssemblyTypeName: DrinkWater, Assembly-CSharp
         m_MethodName: OnInteract
         m_Mode: 0
@@ -1406,6 +1408,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1851fde8-44f8-4f86-bb65-76b9a7b68bb8
     m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3045794427107820467}
+        m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
+        m_MethodName: OnCraftingTableButton
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3d77c8fd-df9a-45cb-b0d6-cad570f72b7c
+    m_ActionName: Player/CraftingTable[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1702,6 +1720,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3045794427107820467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7304457526176843343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb32214cc5f33e43bff86fb7c36b3d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  craftingWindow: {fileID: 0}
+--- !u!114 &8377522894399731938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7304457526176843343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff8aa3cd625b854e9fc439ae5977daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drinkText: {fileID: 0}
 --- !u!1 &7456677215937032596
 GameObject:
   m_ObjectHideFlags: 0
