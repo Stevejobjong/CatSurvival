@@ -90,10 +90,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acbab1ca71a9694dbdaa86230c3d816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ranged: 0
+  enemy: 1
   health: 6
   walkSpeed: 1
   runSpeed: 4
-  dropOnDeath: []
+  dropOnDeath:
+  - {fileID: 11400000, guid: 87c8eafe08188f8468e985498b2beff1, type: 2}
+  - {fileID: 11400000, guid: 69d2e9508b074e44585c9a307f4034c1, type: 2}
   detectDistance: 5
   safeDistance: 8
   minWanderDistance: 5
@@ -103,6 +107,9 @@ MonoBehaviour:
   damage: 5
   attackRate: 1.5
   attackDistance: 2
+  bulletPrefab: {fileID: 0}
+  bulletSpawnPoint: {fileID: 0}
+  bulletSpeed: 30
   fieldOfView: 120
 --- !u!1001 &5070798754510000642
 PrefabInstance:
