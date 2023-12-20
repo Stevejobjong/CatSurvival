@@ -4926,6 +4926,12 @@ MonoBehaviour:
   toolDes: {fileID: 7013624130152563857}
   toolIngredient: {fileID: 1238896875438249377}
   toolUseTxt: {fileID: 2366485586236782190}
+  Wood: {fileID: 11400000, guid: fbca4a28235cef14d821b470749d697d, type: 2}
+  Rock: {fileID: 11400000, guid: f52ba471cea7ee447b7b42cfb16df058, type: 2}
+  Axe: {fileID: 11400000, guid: 099967d2c58b5d744919cc6b516b1450, type: 2}
+  Pick: {fileID: 11400000, guid: e8dbdffc112412246b843102b5e80983, type: 2}
+  Sword: {fileID: 11400000, guid: 6b979696b74579949840f8c70b5f4539, type: 2}
+  FishingRod: {fileID: 11400000, guid: 916d05eb2cfd84948a6966943775d393, type: 2}
   CraftPanel: {fileID: 4519754461736407657}
   CreatToolBtn: {fileID: 7503026747704074633}
 --- !u!1 &7508248738814831240
@@ -5454,7 +5460,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6004734099572097326}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7211459827050541359}
+        m_TargetAssemblyTypeName: ToolMaking, Assembly-CSharp
+        m_MethodName: CreatTool
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8104607559235755088
 GameObject:
   m_ObjectHideFlags: 0

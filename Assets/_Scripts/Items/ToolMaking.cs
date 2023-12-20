@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class ToolMaking : MonoBehaviour
 {
@@ -11,18 +12,21 @@ public class ToolMaking : MonoBehaviour
     public TMP_Text toolIngredient;
     public TMP_Text toolUseTxt;
 
+    [Header("Ingredients")]
+    public ItemData Wood;
+    public ItemData Rock;
+
+    [Header("Results")]
+    public ItemData Axe;
+    public ItemData Pick;
+    public ItemData Sword;
+    public ItemData FishingRod; 
 
     public GameObject CraftPanel;
 
 
     public Button CreatToolBtn;
     private int chooseTool;
-
-
-    private void Awake()
-    {
-        CraftPanel.SetActive(false);
-    }
 
 
     public void ClickAxe()
@@ -67,13 +71,34 @@ public class ToolMaking : MonoBehaviour
         switch(chooseTool)
         {
             case 0: //creat Axe
-
+                if(Inventory.instance.UHaveItem(Wood, 3))
+                {
+                    Inventory.instance.RemoveItem(Wood, 3); //唱公 力芭
+                    Inventory.instance.ThrowItem(Axe);
+                }
                 break;
             case 1:
+                if (Inventory.instance.UHaveItem(Wood, 5))
+                {
+                    Inventory.instance.RemoveItem(Wood, 5); //唱公 力芭
+                    Inventory.instance.ThrowItem(Pick);
+                }
                 break;
             case 2:
+                if (Inventory.instance.UHaveItem(Wood, 2) && Inventory.instance.UHaveItem(Rock, 4))
+                {
+                    Inventory.instance.RemoveItem(Wood, 2); //唱公 力芭
+                    Inventory.instance.RemoveItem(Rock, 4); //倒 力芭
+
+                    Inventory.instance.ThrowItem(Sword);
+                }
                 break;
             case 3:
+                if (Inventory.instance.UHaveItem(Wood, 1))
+                {
+                    Inventory.instance.RemoveItem(Wood, 1); //唱公 力芭
+                    Inventory.instance.ThrowItem(FishingRod);
+                }
                 break;
         }
     }
