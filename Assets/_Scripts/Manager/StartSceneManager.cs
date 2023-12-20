@@ -5,6 +5,7 @@ using DG.Tweening;
 using DG.Tweening.Core.Easing;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class StartSceneManager : MonoBehaviour
 {
@@ -14,15 +15,12 @@ public class StartSceneManager : MonoBehaviour
     [SerializeField] GameObject Fire;
     [SerializeField] GameObject Airplane;
     [SerializeField] Image black;
+    [SerializeField] Image title;
+    [SerializeField] Image startButton;
+    [SerializeField] Image exitButton;
+    [SerializeField] TMP_Text startText;
+    [SerializeField] TMP_Text exitText;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-    }
     private void FixedUpdate()
     {
         Propellor.transform.Rotate(new Vector3(0, 45, 0));
@@ -36,7 +34,11 @@ public class StartSceneManager : MonoBehaviour
 
     IEnumerator GameStart()
     {
-        UIPanel.SetActive(false);
+        title.DOFade(0.0f, 1.0f);
+        startButton.DOFade(0.0f, 1.0f);
+        exitButton.DOFade(0.0f, 1.0f);
+        startText.DOFade(0.0f, 1.0f);
+        exitText.DOFade(0.0f, 1.0f);
         yield return new WaitForSeconds(1.0f);
         Smoke.SetActive(true);
         yield return new WaitForSeconds(2.0f);
