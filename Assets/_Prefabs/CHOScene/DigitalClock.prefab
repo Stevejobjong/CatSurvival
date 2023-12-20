@@ -214,7 +214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6129503302066072959, guid: ec2123cc621178f4c89e59250b1ecfc7, type: 3}
       propertyPath: m_VerticalAlignment
-      value: 256
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 6129503302066072959, guid: ec2123cc621178f4c89e59250b1ecfc7, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -327,7 +327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2082871048869875795, guid: ec2123cc621178f4c89e59250b1ecfc7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 2082871048869875795, guid: ec2123cc621178f4c89e59250b1ecfc7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -476,7 +476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1212576947058799271, guid: 1e507c00506994b4282cea585dac96b8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -80
+      value: -70
       objectReference: {fileID: 0}
     - target: {fileID: 1212576947058799271, guid: 1e507c00506994b4282cea585dac96b8, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -495,12 +495,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5311384058903261434, guid: 1e507c00506994b4282cea585dac96b8, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311384058903261434, guid: 1e507c00506994b4282cea585dac96b8, type: 3}
       propertyPath: m_fontStyle
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5311384058903261434, guid: 1e507c00506994b4282cea585dac96b8, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311384058903261434, guid: 1e507c00506994b4282cea585dac96b8, type: 3}
       propertyPath: m_VerticalAlignment
-      value: 256
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 5311384058903261434, guid: 1e507c00506994b4282cea585dac96b8, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -509,10 +517,43 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 645676145445403145, guid: 1e507c00506994b4282cea585dac96b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8814967990228519330}
   m_SourcePrefab: {fileID: 100100000, guid: 1e507c00506994b4282cea585dac96b8, type: 3}
+--- !u!114 &1277833485895472773 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5311384058903261434, guid: 1e507c00506994b4282cea585dac96b8, type: 3}
+  m_PrefabInstance: {fileID: 6345032427617904255}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835524273519238262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5250604731419301080 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1212576947058799271, guid: 1e507c00506994b4282cea585dac96b8, type: 3}
   m_PrefabInstance: {fileID: 6345032427617904255}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5835524273519238262 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 645676145445403145, guid: 1e507c00506994b4282cea585dac96b8, type: 3}
+  m_PrefabInstance: {fileID: 6345032427617904255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8814967990228519330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835524273519238262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e31b7ae4581d1419127b308e026d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temperatureUI: {fileID: 1277833485895472773}
+  temperatureDifference: 10
