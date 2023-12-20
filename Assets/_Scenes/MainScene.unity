@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 3
     agentTypeID: 0
-    agentRadius: 0.45
-    agentHeight: 6
-    agentSlope: 36.1
-    agentClimb: 0.4
+    agentRadius: 0.2
+    agentHeight: 1.43
+    agentSlope: 50
+    agentClimb: 0.2
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.14999999
+    cellSize: 0.06666667
     manualTileSize: 0
     tileSize: 256
     buildHeightMesh: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: e695ee96f8820b744969ed113271f383, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 78ad1c19da88e2d4887850efecb52b4a, type: 2}
 --- !u!1 &66029119
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +406,71 @@ Transform:
   m_Father: {fileID: 1263656619}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1449962071
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 910019564364795614, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
+      propertyPath: m_Name
+      value: _Environments_Final
+      objectReference: {fileID: 0}
+    - target: {fileID: 910019564364795614, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
 --- !u!1 &1541251423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,7 +1377,7 @@ MonoBehaviour:
   _CampFire: {fileID: 7205796226522882185, guid: d8b20f71f5db2d240ba7fe8c0f84c8b5, type: 3}
   _EventSystem: {fileID: 7755166958099591913, guid: 46084071ce3318c4abdfa2d5af0b7f4b, type: 3}
   _Airplane: {fileID: 6242241491593924479, guid: 0ab0e7260b65c2b4c8877ebbaacf121e, type: 3}
-  _Environments: {fileID: 7253014379399885620, guid: 302f9270c40ea514c921b423eea7347c, type: 3}
+  _Environments: {fileID: 910019564364795614, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
   _Environments_under: {fileID: 7253014379399885620, guid: 83a71b394f5e17c4b9b3ba4a96de8456, type: 3}
   _UI: {fileID: 3413985328616985507, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
   _Fishingrod: {fileID: 6650757128203152208, guid: 783131ac3fccb4047890902109d910a2, type: 3}
