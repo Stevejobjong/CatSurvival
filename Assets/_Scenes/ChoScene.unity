@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.39205953, g: 0.5937048, b: 0.66610473, a: 1}
+  m_IndirectSpecularColor: {r: 0.39205897, g: 0.5937051, b: 0.66610533, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -329,6 +329,7 @@ MonoBehaviour:
   hunger: {fileID: 0}
   thirsty: {fileID: 0}
   stamina: {fileID: 0}
+  temperature: {fileID: 0}
 --- !u!1 &4477527572249851724
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,14 +679,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawn: {fileID: 0}
-  _Player: {fileID: 7304457526176843343, guid: 6c7a3ca28f9ed1a498364d460124232b, type: 3}
-  _NPC: {fileID: 8007392740572416520, guid: a98f093df494b2142a7e5a3a1b325511, type: 3}
-  _Resources: {fileID: 3570643943461153355, guid: 86865cf84415d704d9b131e50b44f333, type: 3}
+  _Player: {fileID: 7304457526176843343, guid: d0d047e44838ea84e919889f648b25b1, type: 3}
+  _NPC: {fileID: 8007392740572416520, guid: 773c0416f2a720e419b896b58cd7c294, type: 3}
+  _Resources: {fileID: 3570643943461153355, guid: 465f18ef8411a884baff7845b7e8fee5, type: 3}
   _CampFire: {fileID: 7205796226522882185, guid: d8b20f71f5db2d240ba7fe8c0f84c8b5, type: 3}
-  _EventSystem: {fileID: 7755166958099591913, guid: 46084071ce3318c4abdfa2d5af0b7f4b, type: 3}
-  _Airplane: {fileID: 6242241491593924479, guid: 0ab0e7260b65c2b4c8877ebbaacf121e, type: 3}
-  _Environments: {fileID: 7253014379399885620, guid: 302f9270c40ea514c921b423eea7347c, type: 3}
-  _UI: {fileID: 3413985328616985507, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
-  _Water: {fileID: 2446602233282352118, guid: 3bd2b223db124bb4ca23dbd2a3d2eab5, type: 3}
+  _EventSystem: {fileID: 7755166958099591913, guid: 19137feddc952f1439e7cc774a02a40e, type: 3}
+  _Airplane: {fileID: 6242241491593924479, guid: 14dca9c24899988498642348963d381a, type: 3}
+  _Environments: {fileID: 7253014379399885620, guid: e48caa03e29e6ae4a91ee4ac4f874ef3, type: 3}
+  _UI: {fileID: 3413985328616985507, guid: 381cce578c84ad644b11a86e2f86803a, type: 3}
   _Fishingrod: {fileID: 6650757128203152208, guid: 783131ac3fccb4047890902109d910a2, type: 3}
   _Pickaxe: {fileID: 5670340711610706814, guid: 091bc806ff83964498ec80a0359d3c31, type: 3}
+  year: 2024
+  current: 1
+  month: 3
+  day: 1
+  hour: 0
+  minute: 0
+  RainProbability: 10
+  WorldTemperature: 0
+  CurrentTemperature: 0
+  IncreaseTemperature: 0
