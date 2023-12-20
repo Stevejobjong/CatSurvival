@@ -46,12 +46,12 @@ public class GameManager : MonoBehaviour
 
     private void InitSceneInstance()
     {
-        _Player = Instantiate(_Player, new Vector3(36f, 0.2f, -22f), Quaternion.Euler(new Vector3(0,-120f,0)));
+        _Player = Instantiate(_Player, new Vector3(47f, 4.3f, 6.24f), Quaternion.Euler(new Vector3(0,-152f,0)));
         _NPC = Instantiate(_NPC, new Vector3(4.57f, 0f, 6.02f), Quaternion.identity);
         _Resources = Instantiate(_Resources);
-        _CampFire = Instantiate(_CampFire, new Vector3(9.83f, 0.293f, 1.76f), Quaternion.identity);
+        _CampFire = Instantiate(_CampFire, new Vector3(39.2f, 4f, 1.76f), Quaternion.identity);
         _EventSystem = Instantiate(_EventSystem);
-        _Airplane = Instantiate(_Airplane, new Vector3(31.93f, 0f, -23.23f), Quaternion.identity);
+        _Airplane = Instantiate(_Airplane, new Vector3(43.81f, 3.81f, 4.72f), Quaternion.identity);
         _Environments = Instantiate(_Environments);
         _UI = Instantiate(_UI);
         _Fishingrod = Instantiate(_Fishingrod, new Vector3(14.2f, 0.2f, 33.61f), Quaternion.identity);

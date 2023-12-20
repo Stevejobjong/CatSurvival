@@ -43,7 +43,7 @@ public class StartSceneManager : MonoBehaviour
         Fire.SetActive(true);
         yield return new WaitForSeconds(1.0f);
         Airplane.transform.DORotate(new Vector3(0, 0, -15f), 2);
-        Airplane.transform.DOMove(new Vector3(31.93f, 0, -23.23f), 3);
+        Airplane.transform.DOMove(new Vector3(43.81f, 3.81f, 4.72f), 3);
         yield return new WaitForSeconds(3.0f);
         yield return null;
         Color c = black.color;
