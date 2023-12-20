@@ -406,71 +406,6 @@ Transform:
   m_Father: {fileID: 1263656619}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1449962071
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 910019564364795614, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
-      propertyPath: m_Name
-      value: _Environments_Final
-      objectReference: {fileID: 0}
-    - target: {fileID: 910019564364795614, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 911083512363752347, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
 --- !u!1 &1541251423
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,9 +643,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6615079733139658626, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: NPCSpawnPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615079733139658626, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: NPCSpawnPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 5064791994572297752, guid: 260ff09d4d1d92b4ebe9483bbb8d9708, type: 3}
+    - target: {fileID: 6615079733139658626, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: NPCSpawnPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 7166168623894973795, guid: 34742f98af5e0ab459ce5ee0ee9437f1, type: 3}
+    - target: {fileID: 6615079733139658626, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: NPCSpawnPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 790923547251123615, guid: 6779e7c6bb53de047a0b0f6365ec770c, type: 3}
+    - target: {fileID: 6615079733139658626, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: NPCSpawnPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 3213546269773981612, guid: ff83fe378ba8286479b83f0a619bf8de, type: 3}
+    - target: {fileID: 6615079733139658626, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: NPCSpawnPoints.Array.data[4]
+      value: 
+      objectReference: {fileID: 6081734766075433134, guid: ff83fe378ba8286479b83f0a619bf8de, type: 3}
+    - target: {fileID: 6615079733139658626, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: NPCSpawnPoints.Array.data[5]
+      value: 
+      objectReference: {fileID: 6081734766075433134, guid: ff83fe378ba8286479b83f0a619bf8de, type: 3}
+    - target: {fileID: 6615079733139658626, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: NPCSpawnPoints.Array.data[6]
+      value: 
+      objectReference: {fileID: 6081734766075433134, guid: ff83fe378ba8286479b83f0a619bf8de, type: 3}
+    - target: {fileID: 6615079733139658626, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: NPCSpawnPoints.Array.data[7]
+      value: 
+      objectReference: {fileID: 6081734766075433134, guid: ff83fe378ba8286479b83f0a619bf8de, type: 3}
     - target: {fileID: 7516354068859484872, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
       propertyPath: m_Name
       value: NPCSpawnManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516354068859484872, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1377,7 +1352,7 @@ MonoBehaviour:
   _CampFire: {fileID: 7205796226522882185, guid: d8b20f71f5db2d240ba7fe8c0f84c8b5, type: 3}
   _EventSystem: {fileID: 7755166958099591913, guid: 46084071ce3318c4abdfa2d5af0b7f4b, type: 3}
   _Airplane: {fileID: 6242241491593924479, guid: 0ab0e7260b65c2b4c8877ebbaacf121e, type: 3}
-  _Environments: {fileID: 910019564364795614, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
+  _Environments: {fileID: 5238594762914300659, guid: 866d6cddbd9cf644e8899da5e775790c, type: 3}
   _Environments_under: {fileID: 7253014379399885620, guid: 83a71b394f5e17c4b9b3ba4a96de8456, type: 3}
   _UI: {fileID: 3413985328616985507, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
   _Fishingrod: {fileID: 6650757128203152208, guid: 783131ac3fccb4047890902109d910a2, type: 3}

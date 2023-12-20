@@ -316,7 +316,7 @@ public class NPC : MonoBehaviour, IDamagable
         int randomDropItemsCount = Random.Range(1, 3);
         for (int x = 0; x < randomDropItemsCount; x++)
         {
-            Debug.Log("DropItems");
+            //Debug.Log("DropItems");
             int randomDropItem = Random.Range(0, dropOnDeath.Length);
             Instantiate(dropOnDeath[randomDropItem].dropPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
         }

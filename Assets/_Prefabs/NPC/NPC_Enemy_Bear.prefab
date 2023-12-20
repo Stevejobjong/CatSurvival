@@ -92,9 +92,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ranged: 0
   enemy: 1
-  health: 6
+  health: 50
   walkSpeed: 1
-  runSpeed: 4
+  runSpeed: 2.5
   dropOnDeath:
   - {fileID: 11400000, guid: 3dace8dc33df73748bb90996ab5cc4b3, type: 2}
   - {fileID: 11400000, guid: 69d2e9508b074e44585c9a307f4034c1, type: 2}
