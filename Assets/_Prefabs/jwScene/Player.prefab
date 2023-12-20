@@ -1200,6 +1200,7 @@ GameObject:
   - component: {fileID: 3476691704406008252}
   - component: {fileID: 6088183640772058415}
   - component: {fileID: 3045794427107820467}
+  - component: {fileID: 8377522894399731938}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1393,7 +1394,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8377522894399731938}
         m_TargetAssemblyTypeName: DrinkWater, Assembly-CSharp
         m_MethodName: OnInteract
         m_Mode: 0
@@ -1732,6 +1733,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftingWindow: {fileID: 0}
+--- !u!114 &8377522894399731938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7304457526176843343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff8aa3cd625b854e9fc439ae5977daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drinkText: {fileID: 0}
 --- !u!1 &7456677215937032596
 GameObject:
   m_ObjectHideFlags: 0

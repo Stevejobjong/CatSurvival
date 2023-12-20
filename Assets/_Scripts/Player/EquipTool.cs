@@ -65,7 +65,7 @@ public class EquipTool : Equip
         }
     }
     public void OnFishing()
-    {        
+    {
         Ray ray = camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, fishingDistance))
@@ -76,16 +76,19 @@ public class EquipTool : Equip
                 resource.Fishing(hit.point);
 
                 //Äù½ºÆ®
-                if(QuestManager.Instance.Fishing == false)
+                if (QuestManager.Instance.Drink == true)
                 {
-                    QuestManager.Instance.QuestCount++;
-                    if (QuestManager.Instance.QuestCount == 6)
+                    if (QuestManager.Instance.Fishing == false)
                     {
-                        QuestManager.Instance.Fishing = true;
+                        QuestManager.Instance.QuestCount++;
+                        if (QuestManager.Instance.QuestCount == 6)
+                        {
+                            QuestManager.Instance.Fishing = true;
+                        }
+                        QuestManager.Instance.FishingQuest(QuestManager.Instance.Fishing, QuestManager.Instance.QuestCount);
                     }
-                    QuestManager.Instance.FishingQuest(QuestManager.Instance.Fishing, QuestManager.Instance.QuestCount);
                 }
-                
+
             }
 
         }
