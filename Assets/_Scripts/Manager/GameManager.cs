@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     private void InitSceneInstance()
     {
-        _Player = Instantiate(_Player, new Vector3(14.2f, 0.2f, 33.61f), Quaternion.identity);
+        _Player = Instantiate(_Player, new Vector3(36f, 0.2f, -22f), Quaternion.Euler(new Vector3(0,-120f,0)));
         _NPC = Instantiate(_NPC, new Vector3(4.57f, 0f, 6.02f), Quaternion.identity);
         _Resources = Instantiate(_Resources);
         _CampFire = Instantiate(_CampFire, new Vector3(9.83f, 0.293f, 1.76f), Quaternion.identity);
