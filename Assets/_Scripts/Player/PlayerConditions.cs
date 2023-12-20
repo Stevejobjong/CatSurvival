@@ -165,6 +165,10 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         {
             temperature.Subtract(TemperatureDifferential(temperature.curValue, Clothes)* Time.deltaTime);
         }
+        if (isWet)
+        {
+            temperature.curValue -= 1f * Time.deltaTime;
+        }
         if (temperature.curValue < 32.0f)
         {
             health.Subtract(temperature.decayRate * Time.deltaTime);

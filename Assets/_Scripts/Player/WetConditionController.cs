@@ -45,20 +45,20 @@ public class WetConditionController : MonoBehaviour
         {
             playerConditions.isWet = false;
             Debug.Log("물이 마름");
-            switch (playerConditions.temperature.curValue)
-            {
-                case float n when (n <= 30):
-                    playerConditions.temperature.Subtract(5);
-                    break;
-                case float n when (n <= 32):
-                    playerConditions.temperature.Subtract(3);
-                    break;
-                case float n when (n <= 34):
-                    playerConditions.temperature.Subtract(1);
-                    break;
-                default:
-                    break;
-            }
+            //switch (playerConditions.temperature.curValue)
+            //{
+            //    case float n when (n <= 30):
+            //        playerConditions.temperature.Subtract(5);
+            //        break;
+            //    case float n when (n <= 32):
+            //        playerConditions.temperature.Subtract(3);
+            //        break;
+            //    case float n when (n <= 34):
+            //        playerConditions.temperature.Subtract(1);
+            //        break;
+            //    default:
+            //        break;
+            //}
         }
     }
 }
