@@ -2361,7 +2361,7 @@ GameObject:
   - component: {fileID: 1188790545039910766}
   - component: {fileID: 4852029496398135201}
   - component: {fileID: 3809796688172400657}
-  - component: {fileID: 2195583687645960140}
+  - component: {fileID: -6976381723177421381}
   m_Layer: 0
   m_Name: NPC_Goat_dark
   m_TagString: NPC
@@ -2429,7 +2429,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2195583687645960140
+--- !u!114 &-6976381723177421381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2438,7 +2438,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5382392652247742123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93ad960d72e64cb488d67a083d531ffb, type: 3}
+  m_Script: {fileID: 11500000, guid: 9acbab1ca71a9694dbdaa86230c3d816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ranged: 0
@@ -2448,7 +2448,6 @@ MonoBehaviour:
   runSpeed: 4
   dropOnDeath:
   - {fileID: 11400000, guid: 69d2e9508b074e44585c9a307f4034c1, type: 2}
-  - {fileID: 11400000, guid: 87c8eafe08188f8468e985498b2beff1, type: 2}
   detectDistance: 5
   safeDistance: 8
   minWanderDistance: 5
@@ -2458,8 +2457,8 @@ MonoBehaviour:
   damage: 5
   attackRate: 1.5
   attackDistance: 20
-  bulletPrefab: {fileID: 3344378372942438129, guid: 4b0de8a3b0f5840499f13c0a0914a032, type: 3}
-  bulletSpawnPoint: {fileID: 1552440358146355882}
+  bulletPrefab: {fileID: 0}
+  bulletSpawnPoint: {fileID: 0}
   bulletSpeed: 30
   fieldOfView: 120
 --- !u!1 &5455095127370039587

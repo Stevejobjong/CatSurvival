@@ -17,6 +17,8 @@ public enum AIState
 public class NPC : MonoBehaviour, IDamagable
 {
     [Header("Stats")]
+    public bool ranged = false;
+    public bool enemy = false;
     public int health;
     public float walkSpeed;
     public float runSpeed;
@@ -39,6 +41,11 @@ public class NPC : MonoBehaviour, IDamagable
     public float attackRate;
     private float lastAttackTime;
     public float attackDistance;
+
+    [Header("Ranged Combat")]
+    public GameObject bulletPrefab;
+    public Transform bulletSpawnPoint;
+    public float bulletSpeed = 30f;
 
     private float playerDistance;
 
@@ -68,10 +75,31 @@ public class NPC : MonoBehaviour, IDamagable
 
         switch (aiState)
         {
-            case AIState.Idle: PassiveUpdate(); break;
-            case AIState.Wandering: PassiveUpdate(); break;
-            case AIState.Attacking: AttackingUpdate(); break;
-            case AIState.Fleeing: FleeingUpdate(); break;
+            case AIState.Idle:
+                PassiveUpdate();
+                break;
+            case AIState.Wandering:
+                PassiveUpdate();
+                break;
+            case AIState.Attacking:
+                if (enemy)
+                {
+                    if (ranged)
+                    {
+                        RangedAttackingUpdate();
+                    }
+                    else
+                    {
+                        AttackingUpdate();
+                    }
+                }
+                break;
+            case AIState.Fleeing:
+                if (enemy)
+                {
+                    FleeingUpdate();
+                }
+                break;
         }
 
     }
@@ -115,7 +143,56 @@ public class NPC : MonoBehaviour, IDamagable
             }
         }
     }
+    //////////////////////////////
+    private void RangedAttackingUpdate()
+    {
+        if (playerDistance > attackDistance || !IsPlayerInFieldOfView())
+        {
+            agent.isStopped = false;
+            NavMeshPath path = new NavMeshPath();
+            if (agent.CalculatePath(PlayerController.instance.transform.position, path))
+            {
+                agent.SetDestination(PlayerController.instance.transform.position);
+            }
+            else
+            {
+                SetState(AIState.Fleeing);
+            }
+        }
+        else
+        {
+            //agent.isStopped = true;
+            attackRate = 3f;
+            if (Time.time - lastAttackTime > attackRate)
+            {
+                lastAttackTime = Time.time;
+                StartCoroutine(RangedAttack());
+            }
+        }
+    }
 
+    private IEnumerator RangedAttack()
+    {
+        animator.speed = 1;
+        agent.isStopped = true;
+
+        animator.SetTrigger("Attack");
+
+        yield return new WaitForSeconds(0.5f);
+        FireProjectile();
+        //yield return new WaitForSeconds(0.2f);
+        agent.isStopped = false;
+
+    }
+
+    private void FireProjectile()
+    {
+        GameObject instantBullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
+        bulletRigid.velocity = bulletSpawnPoint.forward * bulletSpeed;
+    }
+
+    ///////////////////////
     private void PassiveUpdate()
     {
         if (aiState == AIState.Wandering && agent.remainingDistance < 0.1f)
@@ -124,7 +201,7 @@ public class NPC : MonoBehaviour, IDamagable
             Invoke("WanderToNewLocation", Random.Range(minWanderWaitTime, maxWanderWaitTime));
         }
 
-        if (playerDistance < detectDistance)
+        if (playerDistance < detectDistance && enemy == true)
         {
             SetState(AIState.Attacking);
         }
@@ -236,11 +313,13 @@ public class NPC : MonoBehaviour, IDamagable
 
     void Die()
     {
-        for (int x = 0; x < dropOnDeath.Length; x++)
+        int randomDropItemsCount = Random.Range(1, 3);
+        for (int x = 0; x < randomDropItemsCount; x++)
         {
-            Instantiate(dropOnDeath[x].dropPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
+            Debug.Log("DropItems");
+            int randomDropItem = Random.Range(0, dropOnDeath.Length);
+            Instantiate(dropOnDeath[randomDropItem].dropPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
         }
-
         Destroy(gameObject);
     }
 

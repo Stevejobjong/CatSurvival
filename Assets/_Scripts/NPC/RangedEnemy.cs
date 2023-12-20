@@ -320,11 +320,12 @@ public class RangedEnemy : MonoBehaviour, IDamagable
 
     void Die()
     {
-        for (int x = 0; x < dropOnDeath.Length; x++)
+        int randomDropItemsCount = Random.Range(0, 3);
+        for (int x = 0; x < randomDropItemsCount; x++)
         {
-            Instantiate(dropOnDeath[x].dropPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
+            int randomDropItem = Random.Range(0, dropOnDeath.Length);
+            Instantiate(dropOnDeath[randomDropItem].dropPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
         }
-
         Destroy(gameObject);
     }
 
