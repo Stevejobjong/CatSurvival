@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 47effa1c12178bd429debc1c2eb4e594, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &537405340
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,11 +213,13 @@ MonoBehaviour:
   _UI: {fileID: 3413985328616985507, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
   _Fishingrod: {fileID: 6650757128203152208, guid: 783131ac3fccb4047890902109d910a2, type: 3}
   _Pickaxe: {fileID: 5670340711610706814, guid: 091bc806ff83964498ec80a0359d3c31, type: 3}
+  _Rain: {fileID: 0}
   year: 2024
   current: 1
   month: 3
   day: 1
   hour: 0
+  minute: 0
   RainProbability: 10
   WorldTemperature: 0
   CurrentTemperature: 0
