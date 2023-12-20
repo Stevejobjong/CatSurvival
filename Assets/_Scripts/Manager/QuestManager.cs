@@ -145,16 +145,15 @@ public class QuestManager : MonoBehaviour
     void EndingText()
     {
         questText.text = "곰을 잡고 재료를 얻어 탈출하기";
-        QuestCount = 0;
-        EndingQuest(getParts, QuestCount);
+        getParts = false;
+        EndingQuest(getParts);
     }
     
-    public void EndingQuest(bool clear, int count)
+    public void EndingQuest(bool clear)
     {
         if (clear)
         {
-            questText.text = "탈출성공!";
-            SceneManager.LoadScene("Scene_Success");
+            questText.text = "탈출가능";
         }
     }
 }

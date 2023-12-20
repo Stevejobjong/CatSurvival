@@ -59,6 +59,6 @@ public class StartSceneManager : MonoBehaviour
             black.color = c;
             yield return null;
         }
-        SceneManager.LoadScene("jwScene");
+        SceneManager.LoadScene("MainScene");
     }
 }

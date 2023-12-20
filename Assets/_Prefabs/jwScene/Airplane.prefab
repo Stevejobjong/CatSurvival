@@ -69,6 +69,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c80fd658c060534aa72892ff2918943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scrap: {fileID: 11400000, guid: 3dace8dc33df73748bb90996ab5cc4b3, type: 2}
+  AirplaneFixPanel: {fileID: 0}
 --- !u!1 &6394723975123721022
 GameObject:
   m_ObjectHideFlags: 0
