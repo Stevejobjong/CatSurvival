@@ -9,6 +9,9 @@ public class WetConditionController : MonoBehaviour
     private PlayerConditions playerConditions;
     private Coroutine dryCoroutine;
 
+    public AudioSource audioSource;
+    public AudioClip WaterSound;
+
     private void Awake()
     {
         playerConditions = GetComponent<PlayerConditions>(); //현재 player에 달려있는 playercondition 가져오기
@@ -18,7 +21,9 @@ public class WetConditionController : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
         {
             Debug.Log("물에빠짐");
-            if(!playerConditions.isWet)
+            audioSource.clip = WaterSound;
+            audioSource.Play();
+            if (!playerConditions.isWet)
             playerConditions.temperature.Subtract(5);
             if (dryCoroutine != null) StopCoroutine(dryCoroutine);
             playerConditions.isWet = true;

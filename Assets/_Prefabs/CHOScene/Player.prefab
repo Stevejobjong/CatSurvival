@@ -1453,6 +1453,7 @@ MonoBehaviour:
   maxXLook: 85
   lookSensitivity: 0.2
   canLook: 1
+  heartAnim: {fileID: 0}
   condition: {fileID: 8175897322168300818}
 --- !u!114 &8175897322168300818
 MonoBehaviour:
@@ -1539,7 +1540,7 @@ MonoBehaviour:
   maxCheckDistance: 3
   layerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   promptText: {fileID: 0}
 --- !u!114 &1365081230780075534
 MonoBehaviour:
@@ -1630,6 +1631,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c9f101f2c77a8c44b13c526c14eb8df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 6088183640772058415}
+  WaterSound: {fileID: 8300000, guid: 73d31cf79fc947a4c9fa413f55ca0601, type: 3}
 --- !u!82 &6088183640772058415
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1739,6 +1742,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftingWindow: {fileID: 0}
+  onOpenCraftingWindow:
+    m_PersistentCalls:
+      m_Calls: []
+  onCloseCraftingWindow:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8377522894399731938
 MonoBehaviour:
   m_ObjectHideFlags: 0
