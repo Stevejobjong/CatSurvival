@@ -35,7 +35,7 @@ public class DrinkWater : MonoBehaviour
                 QuestManager.Instance.drink = true;
                 QuestManager.Instance.DrinkWaterQuest(QuestManager.Instance.drink);
             }
-            PlayerController.instance.condition.Drink(10.0f);
+            PlayerController.instance.condition.Drink(30.0f);
         }
     }
 

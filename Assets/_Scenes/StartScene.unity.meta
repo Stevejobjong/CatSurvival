@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/_Prefabs/CHOScene/Rain.prefab.meta
+guid: 5ce13775dc0d6f0428c9c2e6e748fe1b
+PrefabImporter:
+========
 guid: 7a6027b80c1217b4f8634415f7d7cf83
 DefaultImporter:
+>>>>>>>> main:Assets/_Scenes/StartScene.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

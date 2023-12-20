@@ -36,6 +36,6 @@ public class Temperature : MonoBehaviour
         }
 
         GameManager.Instance.CurrentTemperature = Temperature + GameManager.Instance.IncreaseTemperature;
-        temperatureUI.text = GameManager.Instance.CurrentTemperature.ToString("N2") + "¡ÆC";
+        temperatureUI.text = GameManager.Instance.CurrentTemperature.ToString("N1") + "¡ÆC";
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Date : MonoBehaviour
 {
     public TMP_Text dateUI;
+    public TMP_Text HourUI;
 
     private int current = 0;
 
@@ -18,6 +19,7 @@ public class Date : MonoBehaviour
         int year = GameManager.Instance.year;
         int month = GameManager.Instance.month;
         int hour = GameManager.Instance.hour;
+        int minute = GameManager.Instance.minute;
         int day = current + GameManager.Instance.day * 3;
 
         if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
@@ -58,7 +60,8 @@ public class Date : MonoBehaviour
         GameManager.Instance.month = month;
         GameManager.Instance.hour = hour;
 
-        dateUI.text = ($"{year}year {month}month {day}day {hour}hour");
+        dateUI.text = ($"{month:D2}/{day:D2}");
+        HourUI.text = ($"{hour:D2}:{minute:D2}");
     }
 
 }

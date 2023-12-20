@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/_Scenes/JihuScene.unity.meta
+guid: c456193aadd8f9e47a7782a955f91918
+========
 guid: 934100517a19d0a428458bd9bd8cb8a1
+>>>>>>>> main:Assets/_Scenes/KHScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

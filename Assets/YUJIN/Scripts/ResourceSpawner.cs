@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ResourceSpawner : MonoBehaviour
 {
@@ -10,8 +11,13 @@ public class ResourceSpawner : MonoBehaviour
     [SerializeField] private float spawnDuration; // 자원 리스폰 주기
     private float timer; // 시간 계산을 위한 타이머
 
+    private void Awake()
+    {
+        Debug.Log("Resource생성?!?!?");
+    }
     void Start()
     {
+        Debug.Log("Resource생성?!?!?");
         timer = spawnDuration;
     }
     void Update()
@@ -20,6 +26,7 @@ public class ResourceSpawner : MonoBehaviour
 
         if(timer <= 0)
         {
+            Debug.Log("Resource생성?!?!?");
             SpawneResource();
             timer = spawnDuration;
         }
@@ -27,6 +34,6 @@ public class ResourceSpawner : MonoBehaviour
     }
     public void SpawneResource()
     {
-        GameObject rsClone = Instantiate(resources[Random.Range(0, resources.Length)].gameObject, SpawnSpots[Random.Range(0, resources.Length)]);
+        GameObject rsClone = Instantiate(resources[Random.Range(0, resources.Length)].gameObject, SpawnSpots[Random.Range(0, SpawnSpots.Length)]);
     }
 }
