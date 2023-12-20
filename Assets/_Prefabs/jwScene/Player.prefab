@@ -1500,8 +1500,13 @@ MonoBehaviour:
     regenRate: 1
     decayRate: 0.5
     uiBar: {fileID: 0}
+  isCold: 0
+  isHot: 0
   isWet: 0
+  StandardResistance: 2
   noHungerHealthDecay: 2
+  WetTemperature: 5
+  Clothes: 0
   onTakeDamage:
     m_PersistentCalls:
       m_Calls:
