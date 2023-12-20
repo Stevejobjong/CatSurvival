@@ -20,7 +20,7 @@ public class ToolMaking : MonoBehaviour
     public ItemData Axe;
     public ItemData Pick;
     public ItemData Sword;
-    public ItemData FishingRod; 
+    public ItemData FishingRod;
 
     public GameObject CraftPanel;
 
@@ -68,19 +68,22 @@ public class ToolMaking : MonoBehaviour
 
     public void CreatTool()
     {
-        switch(chooseTool)
+        switch (chooseTool)
         {
             case 0: //creat Axe
-                
-                if(Inventory.instance.UHaveItem(Wood, 3))
+
+                if (Inventory.instance.UHaveItem(Wood, 3))
                 {
                     if (!QuestManager.Instance.isMakeAxe)
                     {
-                        QuestManager.Instance.isMakeAxe = true;
+                        if (QuestManager.Instance.drink)
+                        {
+                            QuestManager.Instance.isMakeAxe = true;
+                        }
                         QuestManager.Instance.MakeAxe(QuestManager.Instance.isMakeAxe);
+                        Inventory.instance.RemoveItem(Wood, 3); //唱公 力芭
+                        Inventory.instance.ThrowItem(Axe);
                     }
-                    Inventory.instance.RemoveItem(Wood, 3); //唱公 力芭
-                    Inventory.instance.ThrowItem(Axe);
                 }
                 break;
             case 1:
