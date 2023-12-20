@@ -333,6 +333,16 @@ public class Inventory : MonoBehaviour
         }
         return have;
     }
+    public int CheckItemCount(ItemData item)
+    {
+        int Count = 0;
+        ItemSlot slotToStackTo = GetItemStack(item);
+        if (slotToStackTo != null)
+        {
+            Count = slotToStackTo.quantity;            
+        }
+        return Count;
+    }
     
     public void RemoveItem(ItemData item, int num)
     {

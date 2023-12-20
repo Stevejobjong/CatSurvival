@@ -47,6 +47,7 @@ public class InteractionManager : MonoBehaviour
                     curInteractable = hit.collider.GetComponent<IInteractable>();
                     SetPromptText();
                 }
+
             }
             else
             {

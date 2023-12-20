@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class QuestManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class QuestManager : MonoBehaviour
     [HideInInspector] public bool isMakePick;
     [HideInInspector] public bool isMakeFishingRod;
     [HideInInspector] public bool felling;
+    [HideInInspector] public bool getParts;
     [HideInInspector] public int QuestCount;
 
     public static QuestManager Instance { get; private set; }
@@ -26,18 +28,13 @@ public class QuestManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        ResetCount();
-    }
 
-    void ResetCount()
-    {
-        fishing = false;
-        drink = false;
     }
 
     void Start()
     {
         questText = GameManager.Instance._UI.transform.Find("HUD_Canvas/QuestPanel/QuestText").GetComponent<TMP_Text>();
+        drink = false;
         DrinkWaterQuest(drink);
     }
 
@@ -71,6 +68,8 @@ public class QuestManager : MonoBehaviour
         
     void EndMakeAxe()
     {
+        QuestCount = 0;
+        felling = false;
         Felling(felling, QuestCount);
     }
 
@@ -119,32 +118,42 @@ public class QuestManager : MonoBehaviour
 
     void EndMakeFishingRod()
     {
+        QuestCount = 0;
+        fishing = false;
         FishingQuest(fishing, QuestCount);
     }
 
     public void FishingQuest(bool clear, int count)
     {
-        Debug.Log("Fishing");
         questText.text = "낚시하기 (" + count + "/6)";
         if (clear)
         {
             questText.text = "퀘스트 완료!";
             Invoke("EndFishingQuest", 3f);
             QuestCount = 0;
-            //다음 퀘스트
         }
 
     }
     void EndFishingQuest()
     {
-        Ending();
+        questText.text = "비행기 근처에서 탈출 재료 확인 가능";
+        Invoke("EndingText()", 3f);
     }
     // 기타 퀘스트들 
 
 
-    public void Ending()
+    void EndingText()
     {
-        questText.text = "탈출하기";
+        questText.text = "곰을 잡고 재료를 얻어 탈출하기";
+        getParts = false;
+        EndingQuest(getParts);
     }
-
+    
+    public void EndingQuest(bool clear)
+    {
+        if (clear)
+        {
+            questText.text = "탈출가능";
+        }
+    }
 }
