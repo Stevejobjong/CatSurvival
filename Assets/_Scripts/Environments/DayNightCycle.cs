@@ -71,5 +71,6 @@ public class DayNightCycle : MonoBehaviour
     public void SetTime()
     {
         GameManager.Instance.hour = (int)(time * 24);
+        GameManager.Instance.minute = (int)((time * 24*60)%60);
     }
 }

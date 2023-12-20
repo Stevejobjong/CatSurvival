@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public int month = 3;
     public int day = 1;
     public int hour = 0;
+    public int minute = 0;
 
     [Header("Weather")]
     public float RainProbability = 10;
