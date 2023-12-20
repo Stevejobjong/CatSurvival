@@ -41,24 +41,23 @@ public class WetConditionController : MonoBehaviour
     IEnumerator Dry()
     {
         yield return new WaitForSeconds(10f);
-        if (playerConditions.isWet)
-        {
-            playerConditions.isWet = false;
-            Debug.Log("물이 마름");
-            //switch (playerConditions.temperature.curValue)
-            //{
-            //    case float n when (n <= 30):
-            //        playerConditions.temperature.Subtract(5);
-            //        break;
-            //    case float n when (n <= 32):
-            //        playerConditions.temperature.Subtract(3);
-            //        break;
-            //    case float n when (n <= 34):
-            //        playerConditions.temperature.Subtract(1);
-            //        break;
-            //    default:
-            //        break;
-            //}
-        }
+
+        playerConditions.isWet = false;
+        Debug.Log("물이 마름");
+        //switch (playerConditions.temperature.curValue)
+        //{
+        //    case float n when (n <= 30):
+        //        playerConditions.temperature.Subtract(5);
+        //        break;
+        //    case float n when (n <= 32):
+        //        playerConditions.temperature.Subtract(3);
+        //        break;
+        //    case float n when (n <= 34):
+        //        playerConditions.temperature.Subtract(1);
+        //        break;
+        //    default:
+        //        break;
+        //}
+
     }
 }
