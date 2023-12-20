@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/YUJIN/EndingScene/Scene_FAIL.unity.meta
 guid: 477fa6dd4bcfcae4692b559ca3d451fc
+========
+guid: 3f299f38b8699b843a4b42d2dc0fffa1
+folderAsset: yes
+>>>>>>>> main:Assets/Plugins/Demigiant.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

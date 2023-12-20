@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject _UI;
     public GameObject _Fishingrod;
     public GameObject _Pickaxe;
+    public GameObject _Rain;
    
     [Header("Date")]
     public int year = 2024;
