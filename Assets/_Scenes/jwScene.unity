@@ -123,6 +123,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 47effa1c12178bd429debc1c2eb4e594, type: 2}
+--- !u!1 &96902249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 96902250}
+  - component: {fileID: 96902251}
+  m_Layer: 0
+  m_Name: QuestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &96902250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96902249}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5457403645935510259}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &96902251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96902249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e645079a04b3b0947b313fceba3ad499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questText: {fileID: 0}
+  Fishing: 0
+  Drink: 0
+  QuestCount: 0
 --- !u!108 &4207397016786848
 Light:
   m_ObjectHideFlags: 0
@@ -202,6 +250,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &720899608727433669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7972514647009186279}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5457403645935510259}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1392417046044431141
 Transform:
   m_ObjectHideFlags: 0
@@ -329,6 +392,7 @@ MonoBehaviour:
   hunger: {fileID: 0}
   thirsty: {fileID: 0}
   stamina: {fileID: 0}
+  temperature: {fileID: 0}
 --- !u!1 &4477527572249851724
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,9 +423,28 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2819588724632245390}
+  - {fileID: 720899608727433669}
+  - {fileID: 96902250}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6712052428110724269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7972514647009186279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd9fffe692e1844899b70d076e932c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCPrefabs:
+  - {fileID: 5054736893013017991, guid: f497d5328b0b6ae41b39475e66cfce69, type: 3}
+  - {fileID: 8094174674549009194, guid: 13ca2381c911065488155b20647c4361, type: 3}
+  spawnDelay: 0
+  maxSpawnDelay: 10
 --- !u!1 &6867641286678475637
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +714,23 @@ Transform:
   m_Father: {fileID: 8695501884843326939}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &7972514647009186279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 720899608727433669}
+  - component: {fileID: 6712052428110724269}
+  m_Layer: 0
+  m_Name: NPCSpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &8695501884843326939
 Transform:
   m_ObjectHideFlags: 0
@@ -689,3 +789,12 @@ MonoBehaviour:
   _Water: {fileID: 2446602233282352118, guid: 3bd2b223db124bb4ca23dbd2a3d2eab5, type: 3}
   _Fishingrod: {fileID: 6650757128203152208, guid: 783131ac3fccb4047890902109d910a2, type: 3}
   _Pickaxe: {fileID: 5670340711610706814, guid: 091bc806ff83964498ec80a0359d3c31, type: 3}
+  year: 2024
+  current: 1
+  month: 3
+  day: 1
+  hour: 0
+  RainProbability: 10
+  WorldTemperature: 0
+  CurrentTemperature: 0
+  IncreaseTemperature: 0
