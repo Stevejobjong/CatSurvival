@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class QuestManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class QuestManager : MonoBehaviour
     [HideInInspector] public bool isMakePick;
     [HideInInspector] public bool isMakeFishingRod;
     [HideInInspector] public bool felling;
+    [HideInInspector] public bool getParts;
     [HideInInspector] public int QuestCount;
 
     public static QuestManager Instance { get; private set; }
@@ -134,14 +136,25 @@ public class QuestManager : MonoBehaviour
     }
     void EndFishingQuest()
     {
-        Ending();
+        questText.text = "곰을 잡고 재료를 얻어 탈출하기";
+        Invoke("EndingText()", 3f);
     }
     // 기타 퀘스트들 
 
 
-    public void Ending()
+    void EndingText()
     {
         questText.text = "곰을 잡고 재료를 얻어 탈출하기";
+        QuestCount = 0;
+        EndingQuest(getParts, QuestCount);
     }
-
+    
+    public void EndingQuest(bool clear, int count)
+    {
+        if (clear)
+        {
+            questText.text = "탈출성공!";
+            SceneManager.LoadScene("Scene_Success");
+        }
+    }
 }

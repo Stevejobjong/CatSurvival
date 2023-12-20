@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public interface IDamagable
@@ -183,6 +184,7 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     public void Die()
     {
         Debug.Log("플레이어가 죽었다.");
+        SceneManager.LoadScene("Scene_FAIL");
     }
 
     public void TakePhysicalDamage(int damageAmount)
