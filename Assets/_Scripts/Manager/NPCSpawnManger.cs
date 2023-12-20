@@ -9,7 +9,7 @@ public class NPCSpawnManger : MonoBehaviour
     //public Transform spawnPoint;
     private int currentNPCCount = 0;
     public int maxNPCCount = 3;
-    private int spawnRadius = 10;
+    private float spawnRadius = 50f;
     [SerializeField] private float spawnDelay;
     [SerializeField] private float maxSpawnDelay = 3f;
 

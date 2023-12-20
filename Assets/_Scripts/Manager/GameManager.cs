@@ -6,11 +6,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public GameObject enemySpawn;
+    //public GameObject enemySpawn;
 
     [Header("Scene")]
     public GameObject _Player;
-    public GameObject _NPC;
+    //public GameObject _NPC;
     public GameObject _Resources;
     public GameObject _CampFire;
     public GameObject _EventSystem;
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     private void InitSceneInstance()
     {
         _Player = Instantiate(_Player, new Vector3(47f, 4.3f, 6.24f), Quaternion.Euler(new Vector3(0,-152f,0)));
-        _NPC = Instantiate(_NPC, new Vector3(4.57f, 0f, 6.02f), Quaternion.identity);
+        //_NPC = Instantiate(_NPC, new Vector3(4.57f, 0f, 6.02f), Quaternion.identity);
         _Resources = Instantiate(_Resources);
         _CampFire = Instantiate(_CampFire, new Vector3(39.2f, 4f, 1.76f), Quaternion.identity);
         _EventSystem = Instantiate(_EventSystem);
@@ -56,5 +56,7 @@ public class GameManager : MonoBehaviour
         _UI = Instantiate(_UI);
         _Fishingrod = Instantiate(_Fishingrod, new Vector3(14.2f, 0.2f, 33.61f), Quaternion.identity);
         _Pickaxe = Instantiate(_Pickaxe, new Vector3(13.2f, 0.2f, 33.61f), Quaternion.identity);
+
+        //enemySpawn = Instantiate(enemySpawn, Vector3.zero, Quaternion.identity);
     }
 }
