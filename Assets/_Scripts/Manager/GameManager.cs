@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject _Fishingrod;
     public GameObject _Pickaxe;
    
-    [Header("DATE")]
+    [Header("Date")]
     public int year = 2024;
     public int current = 1;
     public int month = 3;
