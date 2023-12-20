@@ -72,6 +72,8 @@ public class EquipTool : Equip
         {
             if (doesGatherFish && hit.collider.TryGetComponent(out Resource resource))
             {
+                if (hit.collider.gameObject.layer != LayerMask.NameToLayer("Water"))
+                    return;
                 print("´ê¾Ò´Ù");
                 resource.Fishing(hit.point);
 
