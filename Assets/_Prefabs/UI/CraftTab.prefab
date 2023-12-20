@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 5335465948942474633}
   - component: {fileID: 4532861661355186213}
   - component: {fileID: 535063594116576620}
-  - component: {fileID: -4376524915322837869}
+  - component: {fileID: 3513994964076186564}
   m_Layer: 0
   m_Name: CraftTab
   m_TagString: Untagged
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &-4376524915322837869
+--- !u!114 &3513994964076186564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,7 +208,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7013582107543479328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 373d963b42621d64c9c530ffd3866438, type: 3}
+  m_Script: {fileID: 11500000, guid: af0fa6359774be94d99006fa597de8bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftInforPanel: {fileID: 0}
+  button: {fileID: 0}
+  icon: {fileID: 0}
+  equipped: 0

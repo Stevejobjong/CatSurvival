@@ -68,7 +68,7 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         temperature.curValue = temperature.startValue;
 
         onTakeDamage.AddListener(GameManager.Instance._UI.transform.Find("HUD_Canvas/DamageIndicator").GetComponent<DamageIndicator>().Flash);
-
+        
         health.uiBar = UIManager.Instance.health;
         hunger.uiBar = UIManager.Instance.hunger;
         thirsty.uiBar = UIManager.Instance.thirsty;
