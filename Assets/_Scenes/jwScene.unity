@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 3
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
-    agentSlope: 45
+    agentRadius: 0.45
+    agentHeight: 6
+    agentSlope: 36.1
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.14999999
     manualTileSize: 0
     tileSize: 256
     buildHeightMesh: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 47effa1c12178bd429debc1c2eb4e594, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: e695ee96f8820b744969ed113271f383, type: 2}
 --- !u!1 &96902249
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,7 +786,6 @@ MonoBehaviour:
   _Airplane: {fileID: 6242241491593924479, guid: 0ab0e7260b65c2b4c8877ebbaacf121e, type: 3}
   _Environments: {fileID: 7253014379399885620, guid: 302f9270c40ea514c921b423eea7347c, type: 3}
   _UI: {fileID: 3413985328616985507, guid: 131e46cdc09e7b04dba29e0b3ea30376, type: 3}
-  _Water: {fileID: 2446602233282352118, guid: 3bd2b223db124bb4ca23dbd2a3d2eab5, type: 3}
   _Fishingrod: {fileID: 6650757128203152208, guid: 783131ac3fccb4047890902109d910a2, type: 3}
   _Pickaxe: {fileID: 5670340711610706814, guid: 091bc806ff83964498ec80a0359d3c31, type: 3}
   year: 2024
