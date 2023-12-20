@@ -168,9 +168,79 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questText: {fileID: 0}
-  Fishing: 0
-  Drink: 0
+  fishing: 0
+  drink: 0
+  isMakeAxe: 0
+  isMakePick: 0
+  isMakeFishingRod: 0
+  felling: 0
   QuestCount: 0
+--- !u!1001 &857254192
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1443596432}
+    m_Modifications:
+    - target: {fileID: 930659321838050026, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930659321838050026, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930659321838050026, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930659321838050026, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930659321838050026, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 930659321838050026, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930659321838050026, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930659321838050026, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930659321838050026, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930659321838050026, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 930659321838050026, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516354068859484872, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: m_Name
+      value: NPCSpawnManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+--- !u!4 &857254193 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 930659321838050026, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+  m_PrefabInstance: {fileID: 857254192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1443596430
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +303,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2029288831}
-  - {fileID: 2094395504}
+  - {fileID: 857254193}
   - {fileID: 537405341}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -654,57 +724,6 @@ MonoBehaviour:
   thirsty: {fileID: 0}
   stamina: {fileID: 0}
   temperature: {fileID: 0}
---- !u!1 &2094395503
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2094395504}
-  - component: {fileID: 2094395505}
-  m_Layer: 0
-  m_Name: NPCSpawnManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2094395504
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094395503}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1443596432}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2094395505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094395503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acd9fffe692e1844899b70d076e932c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NPCPrefabs:
-  - {fileID: 5054736893013017991, guid: f497d5328b0b6ae41b39475e66cfce69, type: 3}
-  - {fileID: 7603012568497188961, guid: a9b2e1ee4772f7d4eb76de68ec5b73e8, type: 3}
-  - {fileID: 5382392652247742123, guid: 54446f05b46d53744a2fd2fac0066eae, type: 3}
-  maxNPCCount: 3
-  spawnDelay: 0
-  maxSpawnDelay: 10
 --- !u!1 &2115261088
 GameObject:
   m_ObjectHideFlags: 0
