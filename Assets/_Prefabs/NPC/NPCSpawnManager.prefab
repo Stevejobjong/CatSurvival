@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPCPrefabs:
-  - {fileID: 5054736893013017991, guid: f497d5328b0b6ae41b39475e66cfce69, type: 3}
-  - {fileID: 5382392652247742123, guid: 54446f05b46d53744a2fd2fac0066eae, type: 3}
   - {fileID: 7603012568497188961, guid: a9b2e1ee4772f7d4eb76de68ec5b73e8, type: 3}
+  - {fileID: 5382392652247742123, guid: 54446f05b46d53744a2fd2fac0066eae, type: 3}
+  maxNPCCount: 3
   spawnDelay: 0
   maxSpawnDelay: 10
