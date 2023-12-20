@@ -170,6 +170,9 @@ MonoBehaviour:
   questText: {fileID: 0}
   fishing: 0
   drink: 0
+  isMakeAxe: 0
+  isMakePick: 0
+  isMakeFishingRod: 0
   felling: 0
   QuestCount: 0
 --- !u!108 &4207397016786848
