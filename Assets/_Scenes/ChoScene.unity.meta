@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/_Scenes/ChoScene.unity.meta
 guid: 7c93c9ffbe0d4684d8677aa0df55068c
+========
+guid: 934100517a19d0a428458bd9bd8cb8a1
+>>>>>>>> main:Assets/_Scenes/KHScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

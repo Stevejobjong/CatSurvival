@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
+    public float runSpeed;
     private Vector2 curMovementInput;
     public float jumpForce;
     public LayerMask groundLayerMask;
@@ -46,6 +47,10 @@ public class PlayerController : MonoBehaviour
     //FixedUpdate는 주로 물리 작업
     private void FixedUpdate()
     {
+        if (Input.GetKey(KeyCode.LeftShift))
+            runSpeed = 2.0f;
+        else
+            runSpeed = 1.0f;
         Move();
     }
 
@@ -61,8 +66,10 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
-        animator.SetFloat("Speed", dir.normalized.magnitude);
-        dir *= moveSpeed;
+        if (dir.magnitude > 0)
+            condition.UseStamina(1);
+        animator.SetFloat("Speed", dir.normalized.magnitude*runSpeed);
+        dir *= moveSpeed*runSpeed;
         dir.y = _rigidbody.velocity.y;
 
         _rigidbody.velocity = dir;
