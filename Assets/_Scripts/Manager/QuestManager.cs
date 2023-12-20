@@ -33,6 +33,7 @@ public class QuestManager : MonoBehaviour
 
     void Start()
     {
+        questText = GameManager.Instance._UI.transform.Find("HUD_Canvas/QuestText").GetComponent<TMP_Text>();
         DrinkWaterQuest(Drink);
     }
 
