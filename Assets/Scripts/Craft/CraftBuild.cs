@@ -45,6 +45,10 @@ public class CraftBuild : MonoBehaviour
             Debug.Log("Click");
             Build();
         }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Cancle();
+        }
     }
 
     //private void PreviewPosition()
@@ -73,8 +77,7 @@ public class CraftBuild : MonoBehaviour
         }
     }
 
-<<<<<<<< Updated upstream:Assets/Scripts/Structure/CraftBuild.cs
-========
+
     // 겹쳐서 생성 안되게 하는 코드였던 것...
     //private void PreviewPosition()
     //{
@@ -88,7 +91,6 @@ public class CraftBuild : MonoBehaviour
     //    }
     //}
 
->>>>>>>> Stashed changes:Assets/Scripts/Craft/CraftBuild.cs
     public void CreateBtnClick(int craftNum)
     {        
         varPreviewCraft = Instantiate(crafts[craftNum].previewCraft, playerPosition.position + playerPosition.forward, Quaternion.identity);
@@ -99,17 +101,16 @@ public class CraftBuild : MonoBehaviour
         PlayerController.instance.ToggleCursor(false);
     }
 
-    //private void Cancle()
-    //{
-    //    if (isPreviewActivated)
-    //    {
-    //        Destroy(varPreviewCraft);
-    //    }
-    //    isPreviewActivated = false;
-    //    varPreviewCraft = null;
-    //   varBuildCraft = null;
+    private void Cancle()
+    {
+        if (isPreviewActivated)
+        {
+            Destroy(varPreviewCraft);
+        }
+        isPreviewActivated = false;
+        varPreviewCraft = null;
+        varBuildCraft = null;
 
-    //    craftInforPanel.SetActive(false);
-    //}
+    }
 
 }

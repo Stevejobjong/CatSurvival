@@ -12,18 +12,18 @@ public class CraftTab
 
 public class CraftingTable : MonoBehaviour
 {
-    public CraftTab[] tabs;
+    //public CraftTab[] tabs;
 
     public GameObject craftingWindow;
 
     private PlayerController controller;
 
-    [Header("Selected Item")]
-    private CraftTab selectedTab;
-    public TextMeshProUGUI selectedCraftName;
-    public TextMeshProUGUI selectedCraftDescription;
-    public TextMeshProUGUI selectedCraftIngrediants;
-    public GameObject createButton;
+    //[Header("Selected Item")]
+    //private CraftTab selectedTab;
+    //public TextMeshProUGUI selectedCraftName;
+    //public TextMeshProUGUI selectedCraftDescription;
+    //public TextMeshProUGUI selectedCraftIngrediants;
+    //public GameObject createButton;
 
     [Header("Events")]
     public UnityEvent onOpenCraftingWindow;
@@ -42,10 +42,10 @@ public class CraftingTable : MonoBehaviour
         craftingWindow.SetActive(false);
 
 
-        for (int i = 0; i < tabs.Length; i++)
-        {
-            tabs[i] = new CraftTab();
-        }
+        //for (int i = 0; i < tabs.Length; i++)
+        //{
+        //    tabs[i] = new CraftTab();
+        //}
     }
 
     public void OnCraftingTableButton(InputAction.CallbackContext callbackContext)
@@ -77,18 +77,18 @@ public class CraftingTable : MonoBehaviour
         return craftingWindow.activeInHierarchy;
     }
 
-    public void BuildCraft(int index)
-    {
-        selectedCraftName.text = selectedTab.craft.craftName;
-        selectedCraftDescription.text = selectedTab.craft.description;
-        selectedCraftIngrediants.text = selectedTab.craft.ingrediants;
-        if (tabs[index].craft == null)
-        {
-            selectedTab = tabs[index];
+    //public void BuildCraft(int index)
+    //{
+    //    selectedCraftName.text = selectedTab.craft.craftName;
+    //    selectedCraftDescription.text = selectedTab.craft.description;
+    //    selectedCraftIngrediants.text = selectedTab.craft.ingrediants;
+    //    if (tabs[index].craft == null)
+    //    {
+    //        selectedTab = tabs[index];
 
-            selectedCraftName.text = selectedTab.craft.craftName;
-            selectedCraftDescription.text = selectedTab.craft.description;
-            selectedCraftIngrediants.text = selectedTab.craft.ingrediants;
-        }
-    }
+    //        selectedCraftName.text = selectedTab.craft.craftName;
+    //        selectedCraftDescription.text = selectedTab.craft.description;
+    //        selectedCraftIngrediants.text = selectedTab.craft.ingrediants;
+    //    }
+    //}
 }

@@ -722,13 +722,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 144247013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6706494c7fb3d144ca2c478a07e24d7d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d284cc8f6c22e54ea4be075d514118e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftCampfire:
-  - craftName: Fire
+  crafts:
+  - craftName: campfire
     buildCraft: {fileID: 982782028287836986, guid: 3fcce97255a691048a21700338271de1, type: 3}
     previewCraft: {fileID: 501295248943222296, guid: 02c35313ad0f5cc46a1bf8c9fb79735f, type: 3}
+  - craftName: Tent
+    buildCraft: {fileID: 3918036935182654285, guid: ae5ca655f153ed1499f916212366c173, type: 3}
+    previewCraft: {fileID: 3918036935182654285, guid: fd2893ea882594a4d96db720bfcfe4f3, type: 3}
   playerPosition: {fileID: 1351297583}
   layerMask:
     serializedVersion: 2
@@ -4944,6 +4947,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150272518}
   m_CullTransparentMesh: 1
+--- !u!114 &1155733243 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8704541166678003467, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+  m_PrefabInstance: {fileID: 1304286214}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1198427005
 GameObject:
   m_ObjectHideFlags: 0
@@ -5035,7 +5049,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5270,27 +5284,27 @@ PrefabInstance:
       objectReference: {fileID: 1317525663}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1304286218}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SlotClick
+      value: OnButtonClick
       objectReference: {fileID: 0}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CraftingTable, Assembly-CSharp
+      value: CraftTabUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5380,6 +5394,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3513994964076186564, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 1155733243}
+    - target: {fileID: 3513994964076186564, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1304286219}
+    - target: {fileID: 3513994964076186564, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+      propertyPath: craftInforPanel
+      value: 
+      objectReference: {fileID: 1317525663}
     - target: {fileID: 4994804311290131805, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_SizeDelta.y
       value: 100
@@ -5425,6 +5451,28 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
+--- !u!114 &1304286218 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3513994964076186564, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+  m_PrefabInstance: {fileID: 1304286214}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304286216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0fa6359774be94d99006fa597de8bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1304286219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+  m_PrefabInstance: {fileID: 1304286214}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304286216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1317525663
 GameObject:
   m_ObjectHideFlags: 0
@@ -5835,7 +5883,7 @@ MonoBehaviour:
   maxCheckDistance: 3
   layerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   promptText: {fileID: 2043207101}
 --- !u!114 &1351297587
 MonoBehaviour:
@@ -6023,6 +6071,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftingWindow: {fileID: 1050984980}
+  onOpenCraftingWindow:
+    m_PersistentCalls:
+      m_Calls: []
+  onCloseCraftingWindow:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1391886459
 GameObject:
   m_ObjectHideFlags: 0
@@ -6374,6 +6428,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8950002779044051064, guid: 81df0775f3dea434b9418c6dcd2e5047, type: 3}
   m_PrefabInstance: {fileID: 2091474163}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1518356221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8704541166678003467, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+  m_PrefabInstance: {fileID: 1813986898509034172}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1557824614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6516,6 +6581,28 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
+--- !u!114 &1568131900 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3513994964076186564, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+  m_PrefabInstance: {fileID: 1813986898509034172}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568131895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0fa6359774be94d99006fa597de8bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1568131901 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+  m_PrefabInstance: {fileID: 1813986898509034172}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568131895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1569526933
 GameObject:
   m_ObjectHideFlags: 0
@@ -7335,6 +7422,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b397becc1314db9499f5803fb07f35bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1940389439 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8704541166678003467, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+  m_PrefabInstance: {fileID: 1957739756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1957739756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7349,27 +7447,27 @@ PrefabInstance:
       objectReference: {fileID: 1317525663}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1957739760}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SlotClick
+      value: OnButtonClick
       objectReference: {fileID: 0}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CraftingTable, Assembly-CSharp
+      value: CraftTabUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7459,6 +7557,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3513994964076186564, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 1940389439}
+    - target: {fileID: 3513994964076186564, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1957739761}
+    - target: {fileID: 3513994964076186564, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+      propertyPath: craftInforPanel
+      value: 
+      objectReference: {fileID: 1317525663}
     - target: {fileID: 4994804311290131805, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_SizeDelta.y
       value: 100
@@ -7504,6 +7614,28 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
+--- !u!114 &1957739760 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3513994964076186564, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+  m_PrefabInstance: {fileID: 1957739756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957739758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0fa6359774be94d99006fa597de8bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1957739761 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+  m_PrefabInstance: {fileID: 1957739756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957739758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1963336547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8061,27 +8193,27 @@ PrefabInstance:
       objectReference: {fileID: 1317525663}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1568131900}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SlotClick
+      value: OnButtonClick
       objectReference: {fileID: 0}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CraftingTable, Assembly-CSharp
+      value: CraftTabUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 535063594116576620, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -8171,6 +8303,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3513994964076186564, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 1518356221}
+    - target: {fileID: 3513994964076186564, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1568131901}
+    - target: {fileID: 3513994964076186564, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
+      propertyPath: craftInforPanel
+      value: 
+      objectReference: {fileID: 1317525663}
     - target: {fileID: 4994804311290131805, guid: 1864767f8ff4b994a96a9e2728084c5d, type: 3}
       propertyPath: m_SizeDelta.y
       value: 100

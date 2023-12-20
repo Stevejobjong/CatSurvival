@@ -61,6 +61,6 @@ public class CraftTabUI : MonoBehaviour
             craftInforPanel.SetActive(true);
         }
 
-        CraftingTable.instance.BuildCraft(0);
+        //CraftingTable.instance.BuildCraft(0);
     }
 }
