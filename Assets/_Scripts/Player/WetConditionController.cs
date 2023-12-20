@@ -8,6 +8,10 @@ public class WetConditionController : MonoBehaviour
 {
     private PlayerConditions playerConditions;
     private Coroutine dryCoroutine;
+
+    public AudioSource audioSource;
+    public AudioClip WaterSound;
+
     private void Awake()
     {
         playerConditions = GetComponent<PlayerConditions>(); //현재 player에 달려있는 playercondition 가져오기
@@ -17,8 +21,13 @@ public class WetConditionController : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
         {
             Debug.Log("물에빠짐");
-            if(dryCoroutine != null) StopCoroutine(dryCoroutine);
+            audioSource.clip = WaterSound;
+            audioSource.Play();
+            if (!playerConditions.isWet)
+            playerConditions.temperature.Subtract(5);
+            if (dryCoroutine != null) StopCoroutine(dryCoroutine);
             playerConditions.isWet = true;
+            
         }
     }
     void OnTriggerExit(Collider other)
@@ -32,7 +41,24 @@ public class WetConditionController : MonoBehaviour
     IEnumerator Dry()
     {
         yield return new WaitForSeconds(10f);
-        playerConditions.isWet = false;
-        Debug.Log("물이 마름");
+        if (playerConditions.isWet)
+        {
+            playerConditions.isWet = false;
+            Debug.Log("물이 마름");
+            switch (playerConditions.temperature.curValue)
+            {
+                case float n when (n <= 30):
+                    playerConditions.temperature.Subtract(5);
+                    break;
+                case float n when (n <= 32):
+                    playerConditions.temperature.Subtract(3);
+                    break;
+                case float n when (n <= 34):
+                    playerConditions.temperature.Subtract(1);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

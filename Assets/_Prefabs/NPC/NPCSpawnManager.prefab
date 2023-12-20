@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6615079733139658626
 MonoBehaviour:
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCPrefabs:
   - {fileID: 5054736893013017991, guid: f497d5328b0b6ae41b39475e66cfce69, type: 3}
-  - {fileID: 8094174674549009194, guid: 13ca2381c911065488155b20647c4361, type: 3}
+  - {fileID: 5382392652247742123, guid: 54446f05b46d53744a2fd2fac0066eae, type: 3}
+  - {fileID: 7603012568497188961, guid: a9b2e1ee4772f7d4eb76de68ec5b73e8, type: 3}
   spawnDelay: 0
   maxSpawnDelay: 10

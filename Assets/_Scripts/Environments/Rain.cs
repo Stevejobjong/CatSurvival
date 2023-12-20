@@ -10,8 +10,7 @@ public class Rain : MonoBehaviour
     public AudioClip rainSound;
     public AudioClip thunderSound;
 
-    
-    public float minRainDuration = 10.0f;
+    public float minRainDuration = 30.0f;
     public float maxRainDuration = 300.0f;
     public float delayRain = 5.0f;
     private float RainProbability = 100;
@@ -22,7 +21,6 @@ public class Rain : MonoBehaviour
     void Start()
     {
         StopRain();
-        originalColor = cloudMaterial.color;
         StartCoroutine(UpdateRainProbabilityRoutine());
     }
 
@@ -43,10 +41,9 @@ public class Rain : MonoBehaviour
     {
         isRaining = true;
         PlayThunderSound();
-        cloudMaterial.color = Color.gray;
-        //어두워지고 먹구름
         yield return new WaitForSeconds(delayRain); // 비가 시작되기 전에 지연
-        StartRain();  
+        StartRain();
+        RainProbability = 100;
         yield return new WaitForSeconds(Random.Range(minRainDuration, maxRainDuration));
         StopRain();
         
@@ -56,12 +53,9 @@ public class Rain : MonoBehaviour
 
     IEnumerator UpdateRainProbabilityRoutine()
     {
-        yield return new WaitForSeconds(10.0f);
-        RainProbability = Random.RandomRange(0, 100);
-
         while (true)
         {
-            yield return new WaitForSeconds(10.0f);
+            yield return new WaitForSeconds(60.0f);
             if (!isRaining)
             {
                 RainProbability = Random.Range(0, 100);

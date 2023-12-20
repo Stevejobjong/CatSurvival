@@ -16,8 +16,19 @@ public class Resource : MonoBehaviour
             if (capacity <= 0) { break; }
             capacity -= 1;
             Instantiate(itemToGive.dropPrefab, hitPoint + Vector3.up, Quaternion.LookRotation(hitNormal, Vector3.up));
+            if (QuestManager.Instance.isMakeAxe)
+            {
+                if (!QuestManager.Instance.felling)
+                {
+                    QuestManager.Instance.QuestCount++;
+                    if (QuestManager.Instance.QuestCount == 5)
+                    {
+                        QuestManager.Instance.felling = true;
+                    }
+                    QuestManager.Instance.Felling(QuestManager.Instance.felling, QuestManager.Instance.QuestCount);
+                }
+            }            
         }
-
         if (capacity <= 0)
             Destroy(gameObject);
     }

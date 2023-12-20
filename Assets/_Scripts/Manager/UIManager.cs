@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
     {
         ConditionParent = GameManager.Instance._UI.transform.Find("HUD_Canvas/PlayerCondition");
         GameObject condition = Instantiate(ConditionPrefab, ConditionParent); //시작시 condition추가
-
+        PlayerController.instance.heartAnim = condition.transform.Find("Health/Image").GetComponent<Animator>();
         SetImage();
     }
     void SetImage()

@@ -45,5 +45,4 @@ public class Season : MonoBehaviour
             return 0.0f;
         }
     }
-
 }
