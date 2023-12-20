@@ -30,10 +30,10 @@ public class DrinkWater : MonoBehaviour
         if (context.performed && active)
         {
             //물마시기 퀘스트
-            if (QuestManager.Instance.Drink == false)
+            if (QuestManager.Instance.drink == false)
             {
-                QuestManager.Instance.Drink = true;
-                QuestManager.Instance.DrinkWaterQuest(QuestManager.Instance.Drink);
+                QuestManager.Instance.drink = true;
+                QuestManager.Instance.DrinkWaterQuest(QuestManager.Instance.drink);
             }
             PlayerController.instance.condition.Drink(10.0f);
         }
