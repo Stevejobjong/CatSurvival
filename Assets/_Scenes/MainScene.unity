@@ -708,6 +708,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6615079733139658626, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: NPCSpawnPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615079733139658626, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: NPCSpawnPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 5064791994572297752, guid: 260ff09d4d1d92b4ebe9483bbb8d9708, type: 3}
+    - target: {fileID: 6615079733139658626, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: NPCSpawnPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 7166168623894973795, guid: 34742f98af5e0ab459ce5ee0ee9437f1, type: 3}
+    - target: {fileID: 6615079733139658626, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: NPCSpawnPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 790923547251123615, guid: 6779e7c6bb53de047a0b0f6365ec770c, type: 3}
+    - target: {fileID: 6615079733139658626, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
+      propertyPath: NPCSpawnPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 3213546269773981612, guid: ff83fe378ba8286479b83f0a619bf8de, type: 3}
     - target: {fileID: 7516354068859484872, guid: bb46d4a4f9c7d0f408a9ba62f48ead5c, type: 3}
       propertyPath: m_Name
       value: NPCSpawnManager
