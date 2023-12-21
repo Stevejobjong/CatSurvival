@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1fc372af14a4ad4194a7fea17c0eab9, type: 3}
-  m_Name: CampFire
+  m_Name: A-Tent
   m_EditorClassIdentifier: 
-  craftName: "\uBAA8\uB2E5\uBD88"
-  description: "\uD0C0\uB2E5\uD0C0\uB2E5\uD0C0\uB2E5\uD0C0\uB2E5\uD0C0\uB2E5\uD0C0\uB2E5\uD0C0\uB2E5\uD0C0\uB2E5\uC557\uB728\uAC70"
-  ingrediants: "\uB3CC 2\uAC1C, \uB098\uBB34 4\uAC1C"
-  type: 0
-  icon: {fileID: 21300000, guid: 3f52da7fee7798f4fb99229e705fca01, type: 3}
+  craftName: "A\uD615 \uD150\uD2B8"
+  description: "\uB0A8\uC790\uB4E4\uC740 \uAD70\uB300\uC5D0\uC11C \uC368\uBD04"
+  ingrediants: "\uB3CC 3\uAC1C \uB098\uBB34 2\uAC1C"
+  type: 1
+  icon: {fileID: 21300000, guid: bbd385b1197215e46990e956219860bf, type: 3}

@@ -18,12 +18,12 @@ public class CraftingTable : MonoBehaviour
 
     private PlayerController controller;
 
-    //[Header("Selected Item")]
-    //private CraftTab selectedTab;
-    //public TextMeshProUGUI selectedCraftName;
-    //public TextMeshProUGUI selectedCraftDescription;
-    //public TextMeshProUGUI selectedCraftIngrediants;
-    //public GameObject createButton;
+    //[Header("selected item")]
+    //private CraftTab selectedtab;
+    //public TextMeshProUGUI selectedcraftname;
+    //public TextMeshProUGUI selectedcraftdescription;
+    //public TextMeshProUGUI selectedcraftingrediants;
+    //public GameObject createbutton;
 
     [Header("Events")]
     public UnityEvent onOpenCraftingWindow;
@@ -81,16 +81,16 @@ public class CraftingTable : MonoBehaviour
 
     //public void BuildCraft(int index)
     //{
-    //    selectedCraftName.text = selectedTab.craft.craftName;
-    //    selectedCraftDescription.text = selectedTab.craft.description;
-    //    selectedCraftIngrediants.text = selectedTab.craft.ingrediants;
+    //    selectedcraftname.text = selectedtab.craft.craftName;
+    //    selectedcraftdescription.text = selectedtab.craft.description;
+    //    selectedcraftingrediants.text = selectedtab.craft.ingrediants;
     //    if (tabs[index].craft == null)
     //    {
-    //        selectedTab = tabs[index];
+    //        selectedtab = tabs[index];
 
-    //        selectedCraftName.text = selectedTab.craft.craftName;
-    //        selectedCraftDescription.text = selectedTab.craft.description;
-    //        selectedCraftIngrediants.text = selectedTab.craft.ingrediants;
+    //        selectedcraftname.text = selectedtab.craft.craftName;
+    //        selectedcraftdescription.text = selectedtab.craft.description;
+    //        selectedcraftingrediants.text = selectedtab.craft.ingrediants;
     //    }
     //}
 }

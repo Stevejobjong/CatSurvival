@@ -8,13 +8,14 @@ public class Craft
     public string craftName;
     public GameObject buildCraft; // 실제 설치되는 구조물
     public GameObject previewCraft; // 설치 미리보기
+    public CraftData craft;
 }
 
 public class CraftBuild : MonoBehaviour
 {
     private bool isPreviewActivated = false;
 
-    [SerializeField] private Craft[] crafts;
+    public Craft[] crafts;
     private GameObject varPreviewCraft; // 미리보기 변수
     private GameObject varBuildCraft; // 실제 설치되는 구조물 변수
 
@@ -24,7 +25,7 @@ public class CraftBuild : MonoBehaviour
     [SerializeField] private float range;
 
     [SerializeField] private GameObject craftingWindow;
-
+    [HideInInspector] public int craftNum;
     // Button createBtn;
 
     //private void Start()
@@ -88,40 +89,41 @@ public class CraftBuild : MonoBehaviour
         }
 
     }
-        // 겹쳐서 생성 안되게 하는 코드였던 것...
-        //private void PreviewPosition()
-        //{
-        //    if (Physics.Raycast(playerPosition.position, playerPosition.forward, out hitInfor, range, layerMask))
-        //    {
-        //        if (hitInfor.transform != null)
-        //        {
-        //            Vector3 location = hitInfor.point;
-        //            varPreviewCraft.transform.position = location;
-        //        }
-        //    }
-        //}
+    // 겹쳐서 생성 안되게 하는 코드였던 것...
+    //private void PreviewPosition()
+    //{
+    //    if (Physics.Raycast(playerPosition.position, playerPosition.forward, out hitInfor, range, layerMask))
+    //    {
+    //        if (hitInfor.transform != null)
+    //        {
+    //            Vector3 location = hitInfor.point;
+    //            varPreviewCraft.transform.position = location;
+    //        }
+    //    }
+    //}
 
-        public void CreateBtnClick(int craftNum)
+    public void CreateBtnClick()
 
+    {
+
+        varPreviewCraft = Instantiate(crafts[craftNum].previewCraft, playerPosition.position + playerPosition.forward, Quaternion.identity);
+        varPreviewCraft.transform.parent = playerPosition;
+        varBuildCraft = crafts[craftNum].buildCraft;
+        isPreviewActivated = true;
+        craftingWindow.SetActive(false);
+        PlayerController.instance.ToggleCursor(false);
+    }
+
+    private void Cancle()
+    {
+        if (isPreviewActivated)
         {
-            varPreviewCraft = Instantiate(crafts[craftNum].previewCraft, playerPosition.position + playerPosition.forward, Quaternion.identity);
-            varPreviewCraft.transform.parent = playerPosition;
-            varBuildCraft = crafts[craftNum].buildCraft;
-            isPreviewActivated = true;
-            craftingWindow.SetActive(false);
-            PlayerController.instance.ToggleCursor(false);
+            Destroy(varPreviewCraft);
         }
-
-        private void Cancle()
-        {
-            if (isPreviewActivated)
-            {
-                Destroy(varPreviewCraft);
-            }
-            isPreviewActivated = false;
-            varPreviewCraft = null;
-            varBuildCraft = null;
-
-        }
+        isPreviewActivated = false;
+        varPreviewCraft = null;
+        varBuildCraft = null;
 
     }
+
+}

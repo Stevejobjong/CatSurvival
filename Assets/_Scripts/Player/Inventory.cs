@@ -45,6 +45,8 @@ public class Inventory : MonoBehaviour
     public UnityEvent onCloseInventory;
 
     public static Inventory instance;
+
+    public int num;
     void Awake()
     {
         instance = this;

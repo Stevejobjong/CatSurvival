@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/MainScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/YUJIN/EndingScene/Scene_Success.unity
+    path: Assets/_Scenes/YUJIN/EndingScene/Scene_Success.unity
     guid: 0dd6018f2cbf56a41a819b0003f142ed
   - enabled: 1
-    path: Assets/YUJIN/EndingScene/Scene_FAIL.unity
+    path: Assets/_Scenes/YUJIN/EndingScene/Scene_FAIL.unity
     guid: 477fa6dd4bcfcae4692b559ca3d451fc
   m_configObjects: {}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9221234540978878305}
   - component: {fileID: 9081078318480883226}
   - component: {fileID: 4043461516030410805}
+  - component: {fileID: 4663887093931934661}
   m_Layer: 8
   m_Name: CampFire
   m_TagString: Untagged
@@ -71,6 +72,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   damageRate: 0.5
+--- !u!114 &4663887093931934661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982782028287836986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1abe71df022a14abfe15fa837437c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  craft: {fileID: 11400000, guid: 46e05eb8f0841e5439ed9740fa9aea52, type: 2}
 --- !u!1001 &4143570536857730454
 PrefabInstance:
   m_ObjectHideFlags: 0

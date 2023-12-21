@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class CraftObject : MonoBehaviour
 {
-    public CraftData craft;
+    //public CraftData craft;
 }

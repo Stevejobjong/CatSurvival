@@ -12,6 +12,11 @@ public class CraftTabUI : MonoBehaviour
     public Image icon;
     private Outline outline;
     private CraftTab curTab;
+    public int thisIcon;
+    [SerializeField]private CraftBuild craftBuild;
+    public TMP_Text selectedcraftname;
+    public TMP_Text selectedcraftdescription;
+    public TMP_Text selectedcraftingrediants;
 
     public bool equipped;
 
@@ -61,6 +66,10 @@ public class CraftTabUI : MonoBehaviour
             craftInforPanel.SetActive(true);
         }
 
-        //CraftingTable.instance.BuildCraft(0);
+        craftBuild.craftNum = thisIcon;
+        selectedcraftname.text = craftBuild.crafts[thisIcon].craft.craftName;
+        selectedcraftdescription.text = craftBuild.crafts[thisIcon].craft.description;
+        selectedcraftingrediants.text = craftBuild.crafts[thisIcon].craft.ingrediants;
+
     }
 }
