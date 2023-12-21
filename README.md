@@ -91,6 +91,13 @@ ResourceSpawner가 랜덤한 위치에 자원(나무)을 재생성합니다.
   
 * 다양한 적 종류
 
+![image](https://github.com/Stevejobjong/CatSurvival/assets/58843907/44b6afb3-eb2e-4833-bd32-dd34d7282e1f)
+![image](https://github.com/Stevejobjong/CatSurvival/assets/58843907/794c3045-e3f6-4372-a7cc-49250eaa1151)
+![image](https://github.com/Stevejobjong/CatSurvival/assets/58843907/05079afc-fe6e-4009-8aa2-686eb1806e07)
+
+
+
+
 * 퀘스트와 스토리   
   * 퀘스트창의 퀘스트를 통해 플레이어가 게임의 조작법에 적응 할 수 있습니다.   
 ![image](https://github.com/Stevejobjong/CatSurvival/assets/128495083/964ddcb8-277a-4687-b1a1-708c592c807d)
