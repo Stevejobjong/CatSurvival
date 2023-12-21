@@ -74,7 +74,29 @@ ResourceSpawner가 랜덤한 위치에 자원(나무)을 재생성합니다.
 # 선택 구현 사항
 
 * 날씨와 환경 요소
+
+5월3일의 온도는 24.8도로 캐릭터의 온도에 영향을 많이 주지 않음
+
+![12345](https://github.com/Stevejobjong/CatSurvival/assets/145965718/98a1396f-b69f-4321-baf0-1b42cbb9e68c)
+
+2월3일의 온도는 -2.7도로 플레이어의 온도에 영향을 많이 주면서 낮은 온도로 인한 플레이어의 체력 감소
+
+![123](https://github.com/Stevejobjong/CatSurvival/assets/145965718/aeece087-e6be-4507-b7e3-d54455d9c32d)
+
+비가 오면 월드 온도가 5도 줄어듬
+
+![1234](https://github.com/Stevejobjong/CatSurvival/assets/145965718/72d2462a-e490-42d9-833c-43b63ef97726)
+
+
+  
 * 다양한 적 종류
+
+![image](https://github.com/Stevejobjong/CatSurvival/assets/58843907/44b6afb3-eb2e-4833-bd32-dd34d7282e1f)
+![image](https://github.com/Stevejobjong/CatSurvival/assets/58843907/794c3045-e3f6-4372-a7cc-49250eaa1151)
+![image](https://github.com/Stevejobjong/CatSurvival/assets/58843907/05079afc-fe6e-4009-8aa2-686eb1806e07)
+
+
+
 
 * 퀘스트와 스토리   
   * 퀘스트창의 퀘스트를 통해 플레이어가 게임의 조작법에 적응 할 수 있습니다.   
