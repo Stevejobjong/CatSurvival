@@ -69,7 +69,7 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         temperature.curValue = temperature.startValue;
 
         onTakeDamage.AddListener(GameManager.Instance._UI.transform.Find("HUD_Canvas/DamageIndicator").GetComponent<DamageIndicator>().Flash);
-        
+
         health.uiBar = UIManager.Instance.health;
         hunger.uiBar = UIManager.Instance.hunger;
         thirsty.uiBar = UIManager.Instance.thirsty;
@@ -80,6 +80,7 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     // Update is called once per frame
     void Update()
     {
+        WetCheck();
         _365();
         Hot();
         Cold();
@@ -104,7 +105,7 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         stamina.uiBar.fillAmount = stamina.GetPercentage();
         temperature.uiBar.fillAmount = temperature.GetPercentage();
     }
-    
+
 
     public void Heal(float amount)
     {
@@ -141,10 +142,10 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     //curValue에 감소되는 값 (월드온도가 높거나 낮은 만큼 * 저항값해서 감소)
     float TemperatureDifferential(float temperature, float Resistance)
     {
-        if (GameManager.Instance.CurrentTemperature > temperature)
-            return (GameManager.Instance.CurrentTemperature - temperature) * TemperatureResistance(Resistance);
+        if (GameManager.Instance.CurrentTemperature > temperature - WetTemperature)
+            return (GameManager.Instance.CurrentTemperature - (temperature - WetTemperature)) * TemperatureResistance(Resistance);
         else
-            return (temperature - GameManager.Instance.CurrentTemperature) * TemperatureResistance(Resistance);
+            return ((temperature - WetTemperature) - GameManager.Instance.CurrentTemperature) * TemperatureResistance(Resistance);
     }
 
     //온도 저항(옷같은거)
@@ -158,12 +159,25 @@ public class PlayerConditions : MonoBehaviour, IDamagable
             return 1 - (float)((StandardResistance + Resistance) * 0.1);
     }
 
+    void WetCheck()
+    {
+        //실내일때 추가해서 실내로 들어가면 비를 맞지 않게 추가할 예정
+        if (!isWet)
+        {
+            if (GameManager.Instance._isWet == true)
+            {
+                Debug.Log("비맞음");
+                WetTemperature = 5;
+            }
+        }
+
+    }
 
     void Cold()
     {
         if (temperature.curValue > GameManager.Instance.CurrentTemperature)
         {
-            temperature.Subtract(TemperatureDifferential(temperature.curValue, Clothes)* Time.deltaTime);
+            temperature.Subtract(TemperatureDifferential(temperature.curValue, Clothes) * Time.deltaTime);
         }
         if (isWet)
         {

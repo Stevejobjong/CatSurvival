@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
     public float CurrentTemperature = 0;
     [HideInInspector]
     public float IncreaseTemperature = 0;
+    [HideInInspector]
+    public bool _isWet = false;
 
     private void Awake()
     {
@@ -59,6 +61,7 @@ public class GameManager : MonoBehaviour
         _UI = Instantiate(_UI);
         _Fishingrod = Instantiate(_Fishingrod, new Vector3(14.2f, 0.2f, 33.61f), Quaternion.identity);
         _Pickaxe = Instantiate(_Pickaxe, new Vector3(13.2f, 0.2f, 33.61f), Quaternion.identity);
+        _Rain = Instantiate(_Rain);
 
         //enemySpawn = Instantiate(enemySpawn, Vector3.zero, Quaternion.identity);
     }

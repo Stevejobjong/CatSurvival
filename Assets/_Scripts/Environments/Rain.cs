@@ -16,8 +16,6 @@ public class Rain : MonoBehaviour
     private float RainProbability = 100;
     private bool isRaining = false;
 
-    private Color originalColor;
-
     void Start()
     {
         StopRain();
@@ -40,15 +38,15 @@ public class Rain : MonoBehaviour
     IEnumerator RainCoroutine()
     {
         isRaining = true;
+        cloudMaterial.color = new Color(0f, 0f, 0f);
         PlayThunderSound();
         yield return new WaitForSeconds(delayRain); // 비가 시작되기 전에 지연
         StartRain();
         RainProbability = 100;
         yield return new WaitForSeconds(Random.Range(minRainDuration, maxRainDuration));
         StopRain();
-        
+
         isRaining = false;
-        cloudMaterial.color = originalColor;
     }
 
     IEnumerator UpdateRainProbabilityRoutine()
@@ -66,6 +64,7 @@ public class Rain : MonoBehaviour
     void StartRain()
     {
         rainParticle.Play();
+        GameManager.Instance._isWet = true;
         audioSource.clip = rainSound;
         audioSource.loop = true;
         audioSource.Play();
@@ -76,7 +75,9 @@ public class Rain : MonoBehaviour
     {
         rainParticle.Stop();
         audioSource.Stop();
+        GameManager.Instance._isWet = false;
         GameManager.Instance.IncreaseTemperature += 5;
+        cloudMaterial.color = new Color(255f, 255f, 255f);
     }
 
     void PlayThunderSound()
