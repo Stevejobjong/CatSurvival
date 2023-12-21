@@ -57,7 +57,7 @@ R키를 누르면 도구와 가구를 제작할 수 있는 CraftingCanvas가 나
   
 </br>
 
-* 자원 리스폰
+* 자원 리스폰   
 ResourceSpawner가 랜덤한 위치에 자원(나무)을 재생성합니다.
 
 초기 화면
@@ -75,5 +75,12 @@ ResourceSpawner가 랜덤한 위치에 자원(나무)을 재생성합니다.
 
 * 날씨와 환경 요소
 * 다양한 적 종류
-* 퀘스트와 스토리
+
+* 퀘스트와 스토리   
+  * 퀘스트창의 퀘스트를 통해 플레이어가 게임의 조작법에 적응 할 수 있습니다.   
+![image](https://github.com/Stevejobjong/CatSurvival/assets/128495083/964ddcb8-277a-4687-b1a1-708c592c807d)
+
+  * 플레이어가 자연스럽게 스토리를 이해할 수 있도록 퀘스트를 구성했습니다.   
+![image](https://github.com/Stevejobjong/CatSurvival/assets/128495083/5d0af7b7-9828-4148-a5da-b137952ccae9)
+
 * 사운드 및 음악
